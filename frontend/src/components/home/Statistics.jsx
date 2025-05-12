@@ -5,22 +5,22 @@ import { motion } from 'framer-motion';
 const StatsSection = () => {
   const stats = [
     {
-      icon: <Users className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-red-600" />,
+      icon: <Users className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />,
       number: "1000+",
       label: "Members"
     },
     {
-      icon: <MapPin className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-red-600" />,
+      icon: <MapPin className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />,
       number: "15+",
       label: "Multiple Locations"
     },
     {
-      icon: <Heart className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-red-600" />,
+      icon: <Heart className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />,
       number: "100%",
       label: "Indian Owned"
     },
     {
-      icon: <Award className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-red-600" />,
+      icon: <Award className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />,
       number: "5 Star",
       label: "Quality Commitment"
     }
@@ -59,7 +59,7 @@ const StatsSection = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="relative mb-4 flex justify-center">
               <div className="absolute inset-0 bg-white/25 blur-xl rounded-full group-hover:bg-red-500/30 transition-all duration-300" />
-              <div className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-white border border-white/20 group-hover:scale-110 transition-all duration-300">
+              <div className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-red-500 border border-white/20 group-hover:scale-110 transition-all duration-300">
                 {stat.icon}
               </div>
             </motion.div>

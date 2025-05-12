@@ -56,7 +56,7 @@ const Footer = () => {
                                                 className="group flex items-center text-white space-x-2 hover:text-white transition-colors text-sm sm:text-base"
                                             >
                                                 <ExternalLink size={14} className="opacity-100 md:group-hover:opacity-100 transition-opacity shrink-0 text-red-500" />
-                                                <span className="break-words">{service}</span>
+                                                <span className="break-words text-xs md:text-lg">{service}</span>
                                             </Link>
                                         </li>
                                     ))}
@@ -80,7 +80,7 @@ const Footer = () => {
                                                 className="group flex items-center text-white space-x-2 hover:text-white transition-colors text-sm sm:text-base"
                                             >
                                                 <ExternalLink size={14} className="opacity-100 md:group-hover:opacity-100 transition-opacity shrink-0 text-red-500" />
-                                                <span className="break-words text-lg">{link}</span>
+                                                <span className="break-words md:text-lg">{link}</span>
                                             </Link>
                                         </li>
                                     ))}
@@ -90,7 +90,7 @@ const Footer = () => {
 
                         {/* Fourth Column - Contact Info */}
                         <div className="space-y-4 md:space-y-5 text-white px-2 sm:px-3">
-                            <h3 className="text-white md:text-xl sm:text-lg font-semibold mb-3 sm:mb-5">Get in Touch</h3>
+                            <h3 className="text-white md:text-xl text-md font-semibold mb-3 sm:mb-5">Get in Touch</h3>
                             <motion.div
                                 initial={{ opacity: 0, y: 40 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -103,7 +103,7 @@ const Footer = () => {
                                     className="flex items-start space-x-2 hover:text-white transition-colors"
                                 >
                                     <MapPin size={20} className="text-red-500 mt-1 shrink-0" />
-                                    <span className="md:text-[16px] sm:text-sm">SNBA Consumers, 1st floor, Mansarovar Bhawan, NIT Road, Raipur, 492010, Chhattisgarh, India</span>
+                                    <span className="md:text-[16px] text-sm">SNBA Consumers, 1st floor, Mansarovar Bhawan, NIT Road, Raipur, 492010, Chhattisgarh, India</span>
                                 </a>
 
                                 <a
@@ -113,7 +113,7 @@ const Footer = () => {
                                     target='_blank'
                                 >
                                     <BsWhatsapp size={16} className="text-red-500 shrink-0" />
-                                    <span className="md:text-[16px] sm:text-sm">7400866821</span>
+                                    <span className="md:text-[16px] text-sm">7400866821</span>
                                 </a>
 
                                 <a
@@ -121,7 +121,7 @@ const Footer = () => {
                                     className="flex items-center space-x-3 hover:text-white transition-colors"
                                 >
                                     <Phone size={16} className="text-red-500 shrink-0" />
-                                    <span className="md:text-[16px] sm:text-sm">9685522890</span>
+                                    <span className="md:text-[16px] text-sm">9685522890</span>
                                 </a>
 
                                 <a
@@ -129,7 +129,7 @@ const Footer = () => {
                                     className="flex items-center space-x-3 hover:text-white transition-colors"
                                 >
                                     <BsTelephone size={16} className="text-red-500 shrink-0" />
-                                    <span className="md:text-[16px] sm:text-sm">1800 233 1112 (Toll-free)</span>
+                                    <span className="md:text-[16px] text-sm">1800 233 1112 (Toll-free)</span>
                                 </a>
 
                                 <a
@@ -137,7 +137,7 @@ const Footer = () => {
                                     className="flex items-center space-x-3 hover:text-white transition-colors"
                                 >
                                     <Mail size={16} className="text-red-500 shrink-0" />
-                                    <span className="md:text-[16px] sm:text-sm break-all">info@snbaconsumers.com</span>
+                                    <span className="md:text-[16px] text-sm break-all">info@snbaconsumers.com</span>
                                 </a>
                             </motion.div>
                         </div>
