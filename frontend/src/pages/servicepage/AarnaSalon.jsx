@@ -98,23 +98,23 @@ const AarnaSalon = () => {
                             alt="Salon Background"
                             className="w-full h-full hidden lg:block md:block object-cover"
                         />
-                        <img src={mobilesalon} className='w-screen h-screen opacity-60 block md:hidden lg:hidden' />
+                        <img src={mobilesalon} className='w-screen h-screen opacity-50 block md:hidden lg:hidden' />
                     </div>
-                    <div className="relative z-10 container mx-auto px-4 h-full flex items-center ml-[450px]">
+                    <div className="relative z-10 container mx-auto px-4 h-full flex items-center lg:ml-[450px]">
                         <div className="max-w-3xl">
-                            <h1 className="text-2xl lg:text-5xl font-bold mb-6 leading-tight text-center">
-                                Welcome to Aarna UniSex<br></br> Salon Beauty Redefined
+                            <h1 className="text-2xl lg:text-5xl font-bold mb-6 leading-tight lg:text-center">
+                                Welcome to <span className='text-red-600'>Aarna UniSex<br></br> Salon</span> Beauty Redefined
                                 <span className="block text-white"></span>
                             </h1>
-                            <p className="lg:text-xl mb-8 text-white text-center">
+                            <p className="lg:text-xl mb-8 text-white lg:text-center">
                                 Transform your look with premium beauty services, expert stylists,
                                 <br></br>and unbeatable prices.
                             </p><br></br>
-                            <div className="space-x-4 ml-48">
+                            <div className="space-x-4 lg:ml-48">
                                 <button
                                     
                                     onClick={() => setshowUserForm(true)}
-                                    className="bg-red-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-600 transition-colors duration-300">
+                                    className="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-600 transition-colors duration-300">
                                     Join Now for ₹99
                                 </button>
                             </div>

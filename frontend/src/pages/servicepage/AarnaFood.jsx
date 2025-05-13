@@ -131,16 +131,17 @@ const AarnaFoodCourt = () => {
                     </div>
                     <div className="relative z-10 container mx-auto px-4  h-full flex items-center">
                         <div className="max-w-3xl mt-24">
-                            <h1 className="text-2xl lg:text-6xl font-bold mb-6 leading-tight">
-                                Aarna Food Court
-                                <span className="block text-white">Delicious Meals, Unbeatable Savings</span>
+                            <h1 className="text-2xl lg:text-6xl font-bold mb-6 leading-tight text-white">
+                                Welcome to <span className='text-red-600'>Aarna Food Court</span>
+                                <span className="block text-white">Your Premium Shopping Destination</span> 
                             </h1>
+                            <span className="block text-white">Delicious Meals, Unbeatable Savings</span>
                             <p className="lg:text-xl mb-8 text-white">
                                 Experience a diverse culinary journey with 25% OFF on every order for just ₹99/month
                             </p>
                             <div className="space-x-4">
                                 <button
-                                    className="bg-red-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-600 transition-colors duration-300"
+                                    className="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-600 transition-colors duration-300"
                                     onClick={() => setshowUserForm(true)}
                                 >
                                     Join Now for ₹99

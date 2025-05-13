@@ -100,12 +100,12 @@ const AarnaMart = () => {
                             alt="Mart Background"
                             className="w-screen h-screen object-fill overflow-hidden  hidden md:block lg:block xl:block opacity-70"
                         />
-                        <img src={mobilemart} className='h-screen w-screen opacity-60 block md:hidden lg:hidden' />
+                        <img src={mobilemart} className='h-[700px] w-screen opacity-50 block md:hidden lg:hidden' />
                     </div>
                     <div className="relative z-10 container mx-auto px-4 h-full flex items-center">
                         <div className="max-w-3xl mt-20">
                             <h1 className="text-2xl lg:text-5xl font-bold mb-6">
-                                Welcome to <span className='text-white'>Aarna Mart</span>
+                                Welcome to <span className='text-red-600 '>Aarna Mart</span>
                                 <span className="block text-white">Your Premium Shopping Destination</span>
                             </h1>
                             <p className="lg:text-xl mb-8 text-white">

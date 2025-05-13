@@ -9,7 +9,7 @@ const HeroSection = () => {
         loop
         muted
         className="w-full h-[450px] lg:h-screen object-cover" 
-        style={{ margin: 0, padding: 0 }}
+        playsInline
       >
         <source src='https://res.cloudinary.com/di4cxxdxr/video/upload/v1740116889/Webvideo_vxzr2b.mp4' type="video/mp4"/>
       </video>

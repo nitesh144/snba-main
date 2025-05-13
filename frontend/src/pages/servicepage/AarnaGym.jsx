@@ -94,12 +94,12 @@ const AarnaGym = () => {
                         alt="Gym Background"
                         className="w-full h-full hidden md:block lg:block object-cover"
                     />
-                    <img src={mobilegym} className='h-screen w-screen block md:hiden lg:hidden xl:hidden' />
+                    <img src={mobilegym} className='h-screen w-screen block md:hiden lg:hidden xl:hidden opacity-70' />
                 </div>
                 <div className="relative z-10 container mx-auto px-4 h-full flex items-center lg:ml-8">
                     <div className="max-w-3xl">
                         <h1 className="text-2xl lg:text-5xl font-bold mb-6 mt-44 lg:mt-2 leading-tight text-white">
-                            Welcome to Aarna Gym
+                            Welcome to <span className='text-red-600'>Aarna Gym</span>
                             <span className="block text-white">Your Ultimate Fitness<br></br> Destination</span>
                         </h1>
                         <p className="md:text-xl mb-6 text-gray-100">
@@ -108,7 +108,7 @@ const AarnaGym = () => {
                         </p>
                         <div className="lg:ml-24">
                             <button onClick={()=> setShowUserForm(true)} 
-                            className="bg-red-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-600 transition-colors duration-300">
+                            className="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-600 transition-colors duration-300">
                                 Join Now for ₹99
                             </button>
                         </div>
