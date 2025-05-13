@@ -29,7 +29,7 @@ const FranchiseForm = ({ isOpen, onClose }) => {
 
     try {
       // Call our Express backend API
-      const response = await fetch('http://localhost:5001/api/send-email', {
+      const response = await fetch('https://snba-backend.onrender.com/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
