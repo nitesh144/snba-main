@@ -85,7 +85,7 @@ function App() {
       <ScrollDown/>
       {/* <SocialSidebar/> */}
       <Footer/>
-      {/* <CallToAction/> */}
+      <CallToAction/>
     </div>
   );
 }
