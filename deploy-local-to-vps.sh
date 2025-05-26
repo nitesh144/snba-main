@@ -2,7 +2,7 @@
 
 VPS_USER=root
 VPS_IP=195.35.23.152
-VPS_PATH=/var/www/snba-main
+VPS_PATH=/snba-main
 
 echo "📤 Pushing to Git..."
 git add .
