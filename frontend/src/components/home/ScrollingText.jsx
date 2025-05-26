@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import { Star } from 'lucide-react';
 
 const ScrollingText = () => {
   const [isPaused, setIsPaused] = useState(false);
@@ -71,30 +70,3 @@ const ScrollingText = () => {
 };
 
 export default ScrollingText;
-
-// Add these styles to your CSS
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-
-  @keyframes scroll-reverse {
-    0% {
-      transform: translateX(-50%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-
-  .pause-animation {
-    animation-play-state: paused !important;
-  }
-`;
-document.head.appendChild(style);

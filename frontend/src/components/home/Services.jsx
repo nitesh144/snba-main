@@ -48,7 +48,7 @@ const ServicesSection = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
           {services.map((service, index) => (
             <motion.div
               custom={index}
@@ -79,11 +79,11 @@ const ServicesSection = () => {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  className="text-xl md:text-2xl lg:text-4xl lg:mb-2 font-bold text-white"
+                  className="text-2xl md:text-2xl lg:text-4xl lg:mb-2 font-bold text-white"
                 >
                   {service.title}
                 </motion.h3>
-                <div className="w-16 h-1 bg-red-600 mx-auto rounded-full mb-1 lg:mb-3" />
+                <div className="w-16 h-1 bg-red-600 mx-auto rounded-full mb-3 lg:mb-3" />
                 <p className="text-sm md:text-lg lg:px-7 lg:mb-2 text-white">
                   {service.description}
                 </p>
@@ -100,7 +100,7 @@ const ServicesSection = () => {
                   to={service.link}
                   className="mt-3 lg:mt-5 flex items-center text-white hover:text-red-500 font-medium transition-colors duration-300"
                 >
-                  <span className="text-sm lg:text-xl">Learn More</span>
+                  <span className="text-lg lg:text-xl">Learn More</span>
                   <ChevronRight className="h-4 w-4 lg:h-5 lg:w-5 ml-1 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
               </motion.div>

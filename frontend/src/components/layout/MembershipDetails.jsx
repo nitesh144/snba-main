@@ -63,7 +63,7 @@ const MembershipPage = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
-      <motion.div 
+      {/* <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="relative h-[350px] flex items-center justify-center overflow-hidden"
@@ -97,16 +97,16 @@ const MembershipPage = () => {
         {showUserForm && (
           <div className='text-black'>
           <MembershipFormPage onClose={()=> setshowUserForm(false)}/> 
-            </div>)}
+            </div>)} */}
 
-        <motion.div 
+        {/* <motion.div 
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           className="absolute bottom-10"
-        >
+        > */}
           {/* <ChevronDown className="w-8 h-8 text-white opacity-75" /> */}
-        </motion.div>
-      </motion.div>
+        {/* </motion.div>
+      </motion.div> */}
 
       {/* Services Section */}
       <div className="max-w-6xl mx-auto px-4 py-10 lg:py-20">
@@ -151,6 +151,8 @@ const MembershipPage = () => {
                   </motion.li>
                 ))}
               </ul>
+              {/* path link */}
+
             </motion.div>
           ))}
         </div>
@@ -174,8 +176,8 @@ const MembershipPage = () => {
         >
           Sign Up Now
         </motion.button>
-        <div className="mt-8 text-gray-400">
-          <p>Contact us: 📞 9109222890</p>
+        <div className="mt-8 text-gray-100">
+          <p>Contact us: 9109222890</p>
           <p>Email: info@snbaconsumers.com</p>
         </div>
       </motion.div>

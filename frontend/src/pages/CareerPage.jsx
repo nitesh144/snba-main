@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Search, Briefcase, MapPin, Clock, X } from "lucide-react";
 import Card from "@/components/ui/card";
@@ -6,14 +5,14 @@ import CardContent from "@/components/ui/cardcontent";
 import Badge from "@/components/ui/badge";
 import Button from "@/components/ui/button";
 import Input from "@/components/ui/input";
-import career from "../assets/images/Career.png"
+import career from "../assets/images/Career.png";
 
 const CareerPage = () => {
   const jobCategories = ["All", "Engineering", "Design", "Marketing", "Sales"];
-  const locations = ["All Locations", "Remote", "India", "USA", "Singapore"];
+  const locations = ["All", "Remote", "India", "USA", "Singapore"];
 
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedLocation, setSelectedLocation] = useState("All Locations");
+  const [selectedLocation, setSelectedLocation] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
@@ -34,8 +33,7 @@ const CareerPage = () => {
       location: "Raipur",
       type: "Full-time",
       salary: "10k-30k",
-      description:
-        "We are looking for a skilled Flutter Mobile App Developer to join our team and help build amazing user interfaces. You'll work on cutting-edge projects and collaborate with a talented team.",
+      description: "We are looking for a skilled Flutter Mobile App Developer...",
       requirements: [
         "0-5 years of mobile development experience",
         "Strong knowledge of Flutter and Dart",
@@ -44,17 +42,16 @@ const CareerPage = () => {
       ]
     },
     {
-      id: 3,
+      id: 2,
       role: "Graphic Designer",
       category: "Design",
       location: "Raipur",
       type: "Full-time",
-      salary: "upto 40k",
-      description:
-        "We need a creative Designer to design intuitive and user-friendly interfaces. You'll be responsible for creating beautiful, functional designs that delight our users.",
+      salary: "Up to 40k",
+      description: "We need a creative Designer to design intuitive interfaces...",
       requirements: [
         "0-5 years of design experience",
-        "Expertise in Photoshop,illustrator and corel draw",
+        "Expertise in Photoshop, Illustrator and CorelDRAW",
         "Strong portfolio of web and mobile designs",
         "Experience with user research and testing"
       ]
@@ -63,9 +60,11 @@ const CareerPage = () => {
 
   const filteredJobs = jobs.filter(job => {
     const matchesCategory = selectedCategory === "All" || job.category === selectedCategory;
-    const matchesLocation = selectedLocation === "All Locations" || job.location === selectedLocation;
-    const matchesSearch = job.role.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    const matchesLocation = selectedLocation === "All" || job.location === selectedLocation;
+    const matchesSearch =
+      job.role.toLowerCase().includes(searchQuery.toLowerCase()) ||
       job.description.toLowerCase().includes(searchQuery.toLowerCase());
+
     return matchesCategory && matchesLocation && matchesSearch;
   });
 
@@ -85,7 +84,6 @@ const CareerPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
     alert("Application submitted successfully!");
     setIsModalOpen(false);
     setFormData({
@@ -99,224 +97,158 @@ const CareerPage = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-black overflow-hidden">
-      <div className="relative w-screen h-[400px] md:h-[600px] overflow-hidden bg-cover " style={{ backgroundImage: `url(${career})` }}>
-  {/* Dark Overlay */}
-  {/* <div className="absolute inset-0 bg-black"></div> */}
+    <div className="min-h-screen bg-black text-white">
+      <div className="py-16 md:py-24">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="flex flex-col md:flex-row items-center gap-1 lg:gap-8">
+            {/* Text */}
+            <div className=" space-y-6 mt-5 max-w-3xl mx-auto">
+              <h1 className="text-3xl font-bold text-white m-5">
+                We are <span className="text-red-500 text-4xl">Hiring</span>
+              </h1>
 
-  {/* Hero Content */}
-  {/* <div className="relative z-10 flex flex-col lg:justify-center items-start h-full text-red-500 pl-12">
-    <h1 className="text-xl mt-36 md:text-5xl font-bold text-left mb-6 tracking-tight">
-      Join Our Growing Team
-    </h1>
-    <p className="text-lg md:text-xl text-red-500 max-w-3xl">
-      Discover your next career opportunity with us.
-    </p>
-  </div> */}
-</div>
+              <h2 className="text-2xl font-bold text-white ">
+                Bring your talent to SNBA Consumers
+                <span className="text-red-500"> and make an impact!</span>
+              </h2>
 
-      {/* Search and Filter Section */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-        <Card className="p-8 bg-gray-900 border-gray-800 shadow-2xl">
+            </div>
+            {/* Image */}
+            <div className="w-full ">
+              <div className="rounded-lg overflow-hidden ml-5 ">
+                <img
+                  src={career}
+                  alt="SNBA Consumers"
+                  className=" h-[350px] lg:h-[400px] object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      {/* Search and Filters */}
+      <div className="max-w-5xl mx-auto px-4">
+        <Card className="bg-gray-900 border border-gray-800 p-6">
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-3 h-5 w-5 text-red-500 " />
+              <Search className="absolute left-3 top-3 h-5 w-5 text-red-500" />
               <Input
-                type="text"
                 placeholder="Search jobs..."
-                className="pl-10 bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-red-500 focus:ring-red-500"
+                className="pl-10 bg-gray-800 text-white border-gray-700"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
             </div>
             <select
-              className="p-2 bg-gray-800 border-gray-700 text-white rounded-md focus:border-red-500 focus:ring-red-500"
+              className="bg-gray-800 text-white border border-gray-700 p-2 rounded-md"
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
             >
-              {jobCategories.map(category => (
-                <option key={category} value={category}>{category}</option>
-              ))}
-            </select>
-            <select
-              className="p-2 bg-gray-800 border-gray-700 text-white rounded-md focus:border-red-500 focus:ring-red-500"
-              value={selectedLocation}
-              onChange={(e) => setSelectedLocation(e.target.value)}
-            >
-              {locations.map(location => (
-                <option key={location} value={location}>{location}</option>
-              ))}
+              {jobCategories.map(cat => <option key={cat}>{cat}</option>)}
             </select>
           </div>
         </Card>
       </div>
 
-      {/* Jobs List */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid gap-8">
-          {filteredJobs.map((job) => (
-            <Card key={job.id} className="bg-gray-900 border-gray-800 hover:shadow-2xl transition-shadow duration-300">
-              <CardContent className="p-8">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
-                  <div>
-                    <h2 className="text-2xl font-bold text-white mb-3">
-                      {job.role}
-                    </h2>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      <Badge className="bg-red-900/30 text-red-300 border-red-700 flex items-center gap-1">
-                        <Briefcase className="h-4 w-4" />
-                        {job.category}
-                      </Badge>
-                      <Badge className="bg-red-900/30 text-red-300 border-red-700 flex items-center gap-1">
-                        <MapPin className="h-4 w-4" />
-                        {job.location}
-                      </Badge>
-                      <Badge className="bg-red-900/30 text-red-300 border-red-700 flex items-center gap-1">
-                        <Clock className="h-4 w-4" />
-                        {job.type}
-                      </Badge>
-                      {/* <Badge className="bg-red-600 text-white border-red-500">{job.salary}</Badge> */}
-                    </div>
+      {/* Job Listings */}
+      <div className="max-w-6xl mx-auto px-4 py-12 grid gap-8">
+        {filteredJobs.map(job => (
+          <Card key={job.id} className="bg-gray-900 border border-gray-800 p-6 hover:shadow-xl">
+            <CardContent>
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div>
+                  <h2 className="text-xl font-bold mb-2">{job.role}</h2>
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    <Badge className="bg-red-900/30 border border-red-700 text-red-300 flex items-center gap-1">
+                      <Briefcase className="h-4 w-4" /> {job.category}
+                    </Badge>
+                    <Badge className="bg-red-900/30 border border-red-700 text-red-300 flex items-center gap-1">
+                      <MapPin className="h-4 w-4" /> {job.location}
+                    </Badge>
+                    <Badge className="bg-red-900/30 border border-red-700 text-red-300 flex items-center gap-1">
+                      <Clock className="h-4 w-4" /> {job.type}
+                    </Badge>
                   </div>
-                  <Button
-                    onClick={() => handleApply(job)}
-                    className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-md shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    Apply Now
-                  </Button>
                 </div>
-                <p className="text-gray-300 mb-6 leading-relaxed">{job.description}</p>
-                <div className="space-y-3">
-                  <h3 className="font-semibold text-white text-lg">Requirements:</h3>
-                  <ul className="list-disc pl-5 space-y-2">
-                    {job.requirements.map((req, index) => (
-                      <li key={index} className="text-gray-300">{req}</li>
-                    ))}
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+
+              </div>
+
+              <p className="text-gray-400 mt-4">{job.description}</p>
+              <ul className="list-disc list-inside mt-4 space-y-2">
+                {job.requirements.map((req, idx) => <li key={idx}>{req}</li>)}
+              </ul>
+            </CardContent>
+            <Button onClick={() => handleApply(job)} className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md lg:ml-[900px]">
+              Apply Now
+            </Button>
+          </Card>
+        ))}
       </div>
 
       {/* Application Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50">
-          <Card className="max-w-2xl w-full max-h-[90vh] overflow-y-auto bg-gray-900 border-gray-800">
-            <div className="p-8">
-              <div className="flex justify-between items-center mb-8 border-b border-gray-700 pb-4">
-                <h2 className="text-2xl font-bold text-white">
-                  Apply for {selectedJob?.role}
-                </h2>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={() => setIsModalOpen(false)}
-                  className="text-gray-400 hover:text-white"
-                >
-                  <X className="h-6 w-6" />
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50 p-4">
+          <Card className="w-full max-w-2xl bg-gray-900 border border-gray-800 max-h-[90vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-xl font-semibold">Apply for {selectedJob?.role}</h2>
+                <Button variant="ghost" size="icon" onClick={() => setIsModalOpen(false)}>
+                  <X className="h-6 w-6 text-white" />
                 </Button>
               </div>
-
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-5">
+                {['name', 'email', 'phone'].map((field) => (
+                  <div key={field}>
+                    <label className="block text-sm mb-1 capitalize">{field}</label>
+                    <Input
+                      name={field}
+                      type={field === 'email' ? 'email' : 'text'}
+                      value={formData[field]}
+                      onChange={handleInputChange}
+                      required
+                      className="bg-gray-800 text-white border-gray-700"
+                    />
+                  </div>
+                ))}
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Full Name
-                  </label>
+                  <label className="block text-sm mb-1">Portfolio URL (optional)</label>
                   <Input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="bg-gray-800 border-gray-700 text-white focus:border-red-500 focus:ring-red-500"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Email Address
-                  </label>
-                  <Input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="bg-gray-800 border-gray-700 text-white focus:border-red-500 focus:ring-red-500"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Phone Number
-                  </label>
-                  <Input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    className="bg-gray-800 border-gray-700 text-white focus:border-red-500 focus:ring-red-500"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Portfolio URL (Optional)
-                  </label>
-                  <Input
-                    type="url"
                     name="portfolio"
+                    type="url"
                     value={formData.portfolio}
                     onChange={handleInputChange}
-                    className="bg-gray-800 border-gray-700 text-white focus:border-red-500 focus:ring-red-500"
+                    className="bg-gray-800 text-white border-gray-700"
                   />
                 </div>
-
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Cover Letter
-                  </label>
+                  <label className="block text-sm mb-1">Cover Letter</label>
                   <textarea
                     name="coverLetter"
                     value={formData.coverLetter}
                     onChange={handleInputChange}
-                    className="w-full p-3 bg-gray-800 border-gray-700 text-white rounded-md h-32 focus:border-red-500 focus:ring-red-500"
                     required
+                    className="w-full p-3 bg-gray-800 text-white border-gray-700 rounded-md h-32"
                   />
                 </div>
-
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Resume
-                  </label>
+                  <label className="block text-sm mb-1">Resume</label>
                   <Input
                     type="file"
-                    onChange={handleFileChange}
                     accept=".pdf,.doc,.docx"
-                    className="bg-gray-800 border-gray-700 text-white focus:border-red-500 focus:ring-red-500"
+                    onChange={handleFileChange}
                     required
+                    className="bg-gray-800 text-white border-gray-700"
                   />
-                  <p className="text-sm text-gray-400 mt-2">
-                    Accepted formats: PDF, DOC, DOCX (Max 5MB)
-                  </p>
+                  <p className="text-xs text-gray-400 mt-1">Accepted: PDF, DOC, DOCX (Max 5MB)</p>
                 </div>
-
-                <div className="flex justify-end gap-4 pt-4 border-t border-gray-700">
-                  <Button
-                    type="button"
-                    onClick={() => setIsModalOpen(false)}
-                    className="bg-gray-800 hover:bg-gray-700 text-white"
-                  >
+                <div className="flex justify-end gap-4">
+                  <Button onClick={() => setIsModalOpen(false)} className="bg-gray-700 hover:bg-gray-600">
                     Cancel
                   </Button>
-                  <Button
-                    type="submit"
-                    className="bg-red-600 hover:bg-red-700 text-white"
-                  >
-                    Submit Application
+                  <Button type="submit" className="bg-red-600 hover:bg-red-700">
+                    Submit
                   </Button>
                 </div>
               </form>

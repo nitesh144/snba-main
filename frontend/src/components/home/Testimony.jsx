@@ -129,7 +129,7 @@ const TestimonialsSection = () => {
 
                 {/* Content */}
                 <motion.p 
-                  className="text-gray-300 mb-6 text-sm lg:text-lg leading-relaxed text-justify"
+                  className="text-gray-300 mb-6 text-sm lg:text-md leading-relaxed text-justify"
                   whileHover={{ scale: 1.02 }}
                 >
                   {testimonial.content}

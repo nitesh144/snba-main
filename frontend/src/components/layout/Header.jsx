@@ -1,10 +1,13 @@
+
+
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 import logo from '../../assets/images/logo/logo.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -14,141 +17,121 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll);
 
+    // Close side menu when route changes
+    setIsSideMenuOpen(false);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [location]);
 
   const isActive = (path) => location.pathname === path;
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+  const toggleSideMenu = () => {
+    setIsSideMenuOpen(!isSideMenuOpen);
   };
 
+  const navLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'About Us', path: '/aboutus' },
+    { name: 'Membership Plan', path: '/membershipplans' },
+    { name: 'Career', path: '/career' },
+    {name: 'Franchisee', path: '/frenchise' },
+  ];
+
   return (
-    <div className="relative">
+    <div className="relative z-50">
       {/* Navigation Bar */}
       <nav
-        className={`fixed top-0 left-0 right-0 px-4 py-2 lg:py-4 z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-black text-white shadow-md' : 'bg-transparent text-white'
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+          isScrolled ? 'bg-black shadow-lg' : 'bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between rounded-full py-2">
-          <div className="flex items-center">
-            <img
-                transition={{type:"spring",
-                    stiffness:100,
-                    damping:10,
-                    delay:0.2,
-                }}
-             src={logo} alt="SNBA Logo" className="h-9 w-13 lg:w-13 lg:h-12 ml-3" />
+        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center z-10">
+            {/* Placeholder for logo - replace with your actual logo */}
+            <Link to='/'>
+            <div className="h-12 w-28 lg:h-12 lg:w-36 flex items-center justify-center">
+              <img src={logo} alt="snba-logo"  />
+            </div>
+            </Link>
           </div>
 
-          {/* Desktop Navigation Links */}
-          <div 
-           className="hidden md:flex items-center space-x-6 md:text-md lg:text-lg xl:text-xl font-semibold">
-            {[
-              { name: 'Home', path: '/' },
-              { name: 'About Us', path: '/aboutus' },
-              { name: 'Membership Plan', path: '/membershipplans' },
-              { name: 'Career', path: '/career' },
-            ].map((item) => (
+          {/* Desktop Navigation Links - hidden on mobile */}
+          <div className="hidden lg:flex items-center space-x-8 text-lg font-semibold text-white">
+            {navLinks.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`hover:text-red-600 relative ${
+                className={`hover:text-red-600 transition-colors duration-200 relative ${
                   isActive(item.path) ? 'text-white' : 'text-white'
                 }`}
               >
                 {item.name}
                 {isActive(item.path) && (
-                  <span className="absolute -bottom-1 left-3 w-1/2 h-1 bg-red-600 rounded-md "></span>
+                  <span className="absolute -bottom-1 left-0 w-2/3 h-1 bg-red-600 rounded-md"></span>
                 )}
               </Link>
             ))}
 
-            <button className="px-4 py-2 rounded-full bg-red-600">
-              <Link to="/frenchise">Apply for Franchisee</Link>
-            </button>
           </div>
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={toggleMobileMenu}
-              className="text-white focus:outline-none"
-            >
-              {isMobileMenuOpen ? (
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  stroke="currentCol/or"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  ></path>
-                </svg>
-              ) : (
-                <svg
-                  className="w-9 h-9"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16m-7 6h7"
-                  ></path>
-                </svg>
-              )}
-            </button>
-          </div>
+
+          {/* Hamburger Menu Button - visible on all screen sizes */}
+          <button
+            onClick={toggleSideMenu}
+            className="text-white focus:outline-none z-10 md:hidden lg:hidden"
+            aria-label="Toggle menu"
+          >
+            <Menu className="w-8 h-8" />
+          </button>
         </div>
+      </nav>
 
-        {/* Mobile Navigation Menu */}
-        {isMobileMenuOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center space-y-6 text-white z-40">
-            {/* Close Button */}
+      {/* Overlay - shown when side menu is open */}
+      {isSideMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300"
+          onClick={toggleSideMenu}
+        ></div>
+      )}
+
+      {/* Side Navigation Menu - slides from right */}
+      <div 
+        className={`fixed top-0 right-0 h-screen w-1/2 sm:w-80 bg-black/80 z-50 transform transition-transform duration-300 ease-in-out ${
+          isSideMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="flex flex-col h-full p-6">
+          {/* Close Button */}
+          <div className="flex justify-end">
             <button
-              onClick={toggleMobileMenu}
-              className="absolute top-5 right-5 text-white text-3xl focus:outline-none"
+              onClick={toggleSideMenu}
+              className="text-white focus:outline-none p-2"
+              aria-label="Close menu"
             >
-              ✕
+              <X className="w-8 h-8" />
             </button>
+          </div>
 
-            {[
-              { name: 'Home', path: '/' },
-              { name: 'About Us', path: '/aboutus' },
-              { name: 'Membership Plan', path: '/membershipplans' },
-              { name: 'Career', path: '/career' },
-            ].map((item) => (
+          {/* Menu Items */}
+          <div className="flex flex-col space-y-8 mt-12 items-left">
+            {navLinks.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-lg font-semibold hover:text-red-600 ${
-                  isActive(item.path) ? 'text-red-500' : 'text-white'
+                className={`text-lg font-semibold hover:text-red-600 transition-colors duration-200 ${
+                  isActive(item.path) ? 'text-red-600' : 'text-white'
                 }`}
-                onClick={toggleMobileMenu}
+                onClick={toggleSideMenu}
               >
                 {item.name}
               </Link>
             ))}
 
-            <button className="px-5 py-2 rounded-full bg-red-600 text-white text-lg">
-              <Link to="/frenchise" onClick={toggleMobileMenu}>
-                Apply for Franchisee
-              </Link>
-            </button>
           </div>
-        )}
-      </nav>
+        </div>
+      </div>
     </div>
   );
 };

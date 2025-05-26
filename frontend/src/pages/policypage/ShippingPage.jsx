@@ -19,7 +19,7 @@ const ShippingPage = () => {
         >
           <div className="flex items-center">
             <span className="mr-3 text-red-500">{icon}</span>
-            <h2 className="text-xl font-bold text-white">{title}</h2>
+            <h2 className="text-sm lg:text-xl font-bold text-white">{title}</h2>
           </div>
           {isOpen ? <ChevronUp className="text-white" /> : <ChevronDown className="text-white" />}
         </button>
@@ -84,8 +84,8 @@ const ShippingPage = () => {
       <div className="relative overflow-hidden bg-gradient-to-r from-black via-red-950 to-black py-20 px-4 sm:px-6 lg:px-8 h-[350px]">
         <div className="relative z-10 max-w-4xl mx-auto py-16">
           <div className="animate-fade-in-down">
-            <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl tracking-tight mb-4">Shipping & Delivery Policy</h1>
-            <p className="text-xl text-red-300">At Aarna Group, we are committed to delivering your orders promptly and efficiently—whether you shop online or at our physical grocery store. Please read our shipping and delivery policy carefully for details on processing times, shipping methods, costs, and more.</p>
+            <h1 className="text-2xl lg:text-4xl font-extrabold text-white sm:text-5xl tracking-tight mb-4">Shipping & Delivery Policy</h1>
+            <p className="text-md lg:text-xl text-gray-300">At Aarna Group, we are committed to delivering your orders promptly and efficiently—whether you shop online or at our physical grocery store. Please read our shipping and delivery policy carefully for details on processing times, shipping methods, costs, and more.</p>
           </div>
         </div>
 
@@ -101,7 +101,7 @@ const ShippingPage = () => {
           title="Order Processing Time" 
           icon={<Clock size={24} />}
         >
-          <ul className="list-disc pl-5 space-y-2">
+          <ul className="list-disc pl-5 space-y-2 text-sm lg:text-lg">
             <li><span className="font-semibold text-red-400">Online Orders</span> are processed <span className="italic">Monday to Sunday</span>, excluding public holidays.</li>
             <li>Orders placed <span className="font-semibold text-red-400">before 10:00 AM IST</span> are processed the <span className="italic">same day</span>.</li>
             <li>Orders placed <span className="font-semibold text-red-400">after 12:00 PM IST</span> or on non-business days will be processed the <span className="italic">next business day</span>.</li>
@@ -117,7 +117,7 @@ const ShippingPage = () => {
           <div className="space-y-4">
             <div>
               <h3 className="text-lg font-semibold text-red-400 mb-2">Online Store</h3>
-              <ul className="list-disc pl-5 space-y-2">
+              <ul className="list-disc pl-5 space-y-2 text-sm lg:text-lg">
                 <li><span className="font-semibold">Standard Shipping:</span> Delivery within 3–7 business days.</li>
                 <li><span className="font-semibold">Expedited Shipping:</span> Delivery within 1–3 business days.</li>
                 <li><span className="font-semibold">Carriers Used:</span> Delhivery, Blue Dart, India Post, FedEx (based on location and service availability).</li>
@@ -126,7 +126,7 @@ const ShippingPage = () => {
 
             <div>
               <h3 className="text-lg font-semibold text-red-400 mb-2">Physical Mart (Local Delivery & Pickup)</h3>
-              <ul className="list-disc pl-5 space-y-2">
+              <ul className="list-disc pl-5 space-y-2 text-sm lg:text-lg">
                 <li><span className="font-semibold">Local Delivery:</span> Within 10 km radius of our store. Orders delivered in 4–24 hours.</li>
                 <li><span className="font-semibold">In-store Pickup:</span> Order online and pick up from our store during working hours (10 AM – 6 PM).</li>
                 <li><span className="font-semibold">Same-Day Delivery:</span> Available for orders placed before 3 PM IST, subject to item availability.</li>
@@ -140,7 +140,7 @@ const ShippingPage = () => {
           title="Shipping & Delivery Costs" 
           icon={<Package size={24} />}
         >
-          <p className="mb-4">Shipping charges are based on <span className="font-semibold text-red-400">order value</span> or <span className="font-semibold text-red-400">order weight</span>.</p>
+          <p className="mb-4 text-sm">Shipping charges are based on <span className="font-semibold text-red-400">order value</span> or <span className="font-semibold text-red-400">order weight</span>.</p>
 
           <ShippingTable 
             title="Online Orders" 

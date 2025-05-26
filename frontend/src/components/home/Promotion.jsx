@@ -42,7 +42,7 @@ const Promotion = () => {
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
-      <div className="bg-gradient-to-br from-purple-600 to-indigo-700 rounded-lg shadow-xl overflow-hidden ml-5">
+      <div className="bg-gradient-to-br from-purple-600 to-indigo-700 rounded-xl shadow-2xl overflow-hidden ml-5 border-2 ">
         <div className="relative">
           {/* Header with gradient background */}
           <div className="bg-gradient-to-r from-gray-800 to-red-500  px-4 py-3 flex items-center justify-between">
@@ -65,18 +65,18 @@ const Promotion = () => {
           </div>
 
           {/* Content area */}
-          <div className="px-6 pt-4 pb-5 bg-white dark:bg-gray-800">
-            <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
+          <div className="px-6 pt-4 pb-5 bg-gray-800 ">
+            <h3 className="text-xl font-bold text-white mb-2">
               Experience The Aarna Difference
             </h3>
             
-            <p className="mb-4 text-gray-600 dark:text-gray-300 text-sm">
-              For a limited time, enjoy <span className="font-semibold text-red-600 dark:text-red-400">75% OFF</span> on <span className="font-semibold">GYM</span> and <span className="font-semibold">SALON</span>, 
-              Up to <span className="font-semibold text-red-600 dark:text-red-400">90% OFF</span> on <span className="font-semibold">MART</span> and 
-              <span className="font-semibold text-red-600 dark:text-red-400"> 25% OFF</span> on <span className="font-semibold">FOODCOURT</span>.
+            <p className="mb-4 text-white text-sm">
+              For a limited time, enjoy <span className="font-semibold text-red-600 ">75% OFF</span> on <span className="font-semibold">GYM</span> and <span className="font-semibold">SALON</span>, 
+              Up to <span className="font-semibold text-red-600 ">90% OFF</span> on <span className="font-semibold">MART</span> and 
+              <span className="font-semibold text-red-600 "> 25% OFF</span> on <span className="font-semibold">FOODCOURT</span>.
             </p>
             
-            <div className="flex items-center mb-4 text-gray-500 dark:text-gray-400 text-sm">
+            <div className="flex items-center mb-4 text-white text-sm">
               <Heart size={16} className="text-pink-500 mr-2" />
               <p>Gentle, effective skincare with expert aestheticians</p>
             </div>

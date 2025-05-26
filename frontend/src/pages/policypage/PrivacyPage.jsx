@@ -80,7 +80,7 @@ To exercise your rights, contact us at snbaconsumers@gmail.com.
       We retain your information only as long as necessary to fulfill the purposes outlined in this policy or to comply with legal obligations.` },
     { id: 'children', title: "Children's Privacy", number: '10', content: 'SNBA Consumer services are not directed to individuals under the age of 13. We do not knowingly collect personal information from children without parental consent.' },
     { id: 'changes', title: 'Changes to This Policy', number: '11', content: 'We may update this Privacy Policy periodically. Changes will be posted on this page, and significant updates may be communicated via email or app notifications.' },
-   
+
   ];
 
   return (
@@ -162,28 +162,9 @@ To exercise your rights, contact us at snbaconsumers@gmail.com.
 
         {/* Navigation Sidebar + Content */}
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Navigation Sidebar */}
-          <div className="lg:w-1/4">
-            <div className="sticky top-8">
-              <nav className="space-y-2">
-                {sections.map((section) => (
-                  <button
-                    key={section.id}
-                    onClick={() => setActiveSection(section.id)}
-                    className={`w-full text-left px-4 py-2 rounded transition-colors ${activeSection === section.id
-                      ? 'bg-red-600 text-white'
-                      : 'hover:bg-red-900'
-                      }`}
-                  >
-                    <span className="font-medium">{section.number}. {section.title}</span>
-                  </button>
-                ))}
-              </nav>
-            </div>
-          </div>
 
           {/* Main Content */}
-          <div className="lg:w-3/4 space-y-12">
+          <div className=" space-y-12">
             {sections.map((section) => (
               <section key={section.id} id={section.id} className="bg-gray-800 p-6 rounded-lg border border-red-500">
                 <h2 className="text-2xl font-bold mb-4 text-red-600">{section.number}. {section.title}</h2>

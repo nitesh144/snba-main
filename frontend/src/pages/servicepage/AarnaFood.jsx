@@ -127,42 +127,23 @@ const AarnaFoodCourt = () => {
                             alt="Food Court Background"
                             className="w-screen h-screen hidden md:block lg:block object-cover"
                         />
-                        <img src={mobilefood} className='w-screen h-screen opacity-60 block md:hidden lg:hidden' />
+                        <img src={mobilefood} className='w-screen h-screen block md:hidden lg:hidden' />
                     </div>
-                    <div className="relative z-10 container mx-auto px-4  h-full flex items-center">
-                        <div className="max-w-3xl mt-24">
+                    <div className="relative z-10 container mx-auto px-4 flex items-center">
+                        <div className=" mt-[150px] lg:mt-72">
                             <h1 className="text-2xl lg:text-6xl font-bold mb-6 leading-tight text-white">
-                                Welcome to <span className='text-red-600'>Aarna Food Court</span>
+                                Welcome to <br /><span className='text-red-600 text-outline-white text-3xl'>Aarna Food Court</span>
                                 <span className="block text-white">Your Premium Shopping Destination</span> 
                             </h1>
-                            <span className="block text-white">Delicious Meals, Unbeatable Savings</span>
-                            <p className="lg:text-xl mb-8 text-white">
-                                Experience a diverse culinary journey with 25% OFF on every order for just ₹99/month
-                            </p>
                             <div className="space-x-4">
                                 <button
-                                    className="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-600 transition-colors duration-300"
+                                    className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-600 transition-colors duration-300"
                                     onClick={() => setshowUserForm(true)}
                                 >
                                     Join Now for ₹99
                                 </button>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                {/* Special Offer Section */}
-                <div className="bg-red-500 py-16">
-                    <div className="container mx-auto px-4 text-center">
-                        <h2 className="text-2xl lg:text-4xl font-bold mb-4">Special Offer: 25% OFF</h2>
-                        <p className="text-sm lg:text-xl mb-8">Join now for just ₹99 per month!</p>
-                        <motion.button
-                        
-                            onClick={() => setshowUserForm(true)}
-                            className="bg-white text-red-500 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center gap-2 mx-auto">
-                            Claim Offer Now
-                            <ArrowRight className="w-5 h-5" />
-                        </motion.button>
                     </div>
                 </div>
 
@@ -184,7 +165,7 @@ const AarnaFoodCourt = () => {
                                 </div>
                                 <button
                                     onClick={() => setshowUserForm(true)}
-                                    className="mt-8  bg-red-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-600 transition-colors duration-300">
+                                    className="mt-8  bg-red-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-600 transition-colors duration-300">
                                     Become a Member
                                 </button>
                             </div>
@@ -212,7 +193,7 @@ const AarnaFoodCourt = () => {
                 <div className=" py-8 lg:py-24 bg-gray-800">
                     <div className="container mx-auto px-4">
                         <h2 className="text-3xl lg:text-4xl font-bold text-center mb-16">Our Cuisines</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {category.map((category, index) => (
                                 <div key={index} className="relative group overflow-hidden rounded-lg">
                                     <img
@@ -221,8 +202,8 @@ const AarnaFoodCourt = () => {
                                         className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-75"></div>
-                                    <div className="absolute bottom-0 left-0 p-6">
-                                        <h3 className="text-2xl font-bold mb-2">{category.name}</h3>
+                                    <div className="absolute bottom-0 left-0 p-2">
+                                        <h3 className="text-lg lg:text-2xl font-bold mb-1">{category.name}</h3>
                                     </div>
                                 </div>
                             ))}
@@ -234,13 +215,13 @@ const AarnaFoodCourt = () => {
                 <div className="py-8 lg:py-24 bg-gradient-to-b from-gray-800 to-black">
                     <div className="container mx-auto px-4">
                         <h2 className="text-3xl lg:text-4xl font-bold text-center mb-6">Why We're Different</h2>
-                        <p className="text-sm lg:text-xl text-gray-400 text-center mb-16 max-w-3xl mx-auto">
+                        <p className="text-sm lg:text-xl text-gray-400 text-center mb-6 max-w-3xl mx-auto">
                             Discover how Aarna Food Court offers a superior dining experience compared to other food courts.
                         </p>
 
                         {comparisonData.map((section, index) => (
-                            <div key={index} className="mb-16 max-w-5xl mx-auto">
-                                <h3 className="text-3xl font-bold mb-8 text-center text-red-500">{section.category}</h3>
+                            <div key={index} className=" max-w-5xl mx-auto">
+                                <h3 className="text-3xl font-bold m-5 text-center text-red-500">{section.category}</h3>
                                 <div className="grid md:grid-cols-2 gap-8">
                                     <div className="bg-gray-900 rounded-lg p-8">
                                         <div className="text-xl font-bold mb-6 flex items-center gap-3">
@@ -278,12 +259,12 @@ const AarnaFoodCourt = () => {
                 </div>
 
                 {/* CTA Section */}
-                <div className=" bg-black">
+                <div className=" bg-black pb-8">
                     <div className="container mx-auto px-4 text-center">
-                        <h2 className="text-3xl lg:text-4xl font-bold mb-8">Ready to Taste the Difference?</h2>
+                        <h2 className="text-2xl lg:text-4xl font-bold mb-2">Ready to Taste the Difference?</h2>
                         <p className="text-sm lg:text-xl text-gray-400 mb-8">Join Aarna Food Court today and begin your food journey!</p>
                         <button
-                            className="bg-red-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-600 transition-colors duration-300"
+                            className="bg-red-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-600 transition-colors duration-300"
                             onClick={() => setshowUserForm(true)}
                         >
                             Join Membership

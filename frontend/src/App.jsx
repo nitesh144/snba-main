@@ -31,6 +31,7 @@ import MartBlog from './pages/blogpages/MartBlog';
 import SalonBlog from './pages/blogpages/SalonBlog';
 import FrenchisePage from './pages/franchisepage/FrenchisePage';
 import FrenchiseForm from './components/form/FrenchiseForm';
+import ScrollDown from './components/layout/ScrollDown';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -53,7 +54,6 @@ function App() {
     <div>
       <Header/>
       <ScrollToTop/>
-      {/* <Promotion/> */}
       <div>
         <Routes>
           <Route path='/' element={<HomePage />} />
@@ -82,9 +82,10 @@ function App() {
           <Route path='/salon-blog' element={<SalonBlog/>}></Route>
         </Routes>
       </div>
-      <SocialSidebar/>
+      <ScrollDown/>
+      {/* <SocialSidebar/> */}
       <Footer/>
-      <CallToAction/>
+      {/* <CallToAction/> */}
     </div>
   );
 }

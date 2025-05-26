@@ -8,12 +8,6 @@ export default function AarnaFoodCourt() {
     <div className=" text-white min-h-screen font-sans overflow-hidden " style={{backgroundImage: `url(${foodbg})`}}>
       {/* Hero Section - Enhanced with more visual appeal */}
       <section className="relative overflow-hidden py-20 md:py-32">
-        {/* Decorative elements */}
-        {/* <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-900/90 via-black/70 to-black"></div>
-          <div className="absolute -top-12 -right-12 w-64 h-64 bg-red-600 rounded-full blur-3xl opacity-20"></div>
-          <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-red-800 rounded-full blur-3xl opacity-20"></div>
-        </div> */}
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col items-center justify-center">

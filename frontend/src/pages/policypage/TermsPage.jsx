@@ -195,32 +195,11 @@ const TermsOfService = () => {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 max-w-7xl">
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Navigation Sidebar */}
-          <div className="lg:w-1/4">
-            <div className="sticky top-8">
-              <nav className="space-y-2">
-                {sections.map((section) => (
-                  <button
-                    key={section.id}
-                    onClick={() => setActiveSection(section.id)}
-                    className={`w-full flex items-center text-left px-4 py-3 rounded transition-colors ${activeSection === section.id
-                        ? 'bg-red-600 text-white'
-                        : 'hover:bg-red-900/50'
-                      }`}
-                  >
-                    <span className="mr-2 text-sm">{section.number}.</span>
-                    <span className="flex-1">{section.title}</span>
-                    <ChevronRight className="w-4 h-4 opacity-50" />
-                  </button>
-                ))}
-              </nav>
-            </div>
-          </div>
 
           {/* Terms Content */}
-          <div className="lg:w-3/4">
+          <div className="lg:w-full">
             <div className="prose prose-invert max-w-none">
               {Object.entries(termsContent).map(([key, section]) => (
                 <section
