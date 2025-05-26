@@ -10,4 +10,4 @@ git commit -m "Deploy update"
 git push origin main
 
 echo "🚀 Deploying to VPS..."
-ssh $VPS_USER@$VPS_IP "cd $VPS_PATH && git pull origin main && ./deploy.sh"
+ssh root@195.35.23.152 "cd /snba-main && git pull origin main && ./deploy.sh"
