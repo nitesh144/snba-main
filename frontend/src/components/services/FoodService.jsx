@@ -6,9 +6,11 @@ import {
   ChefHat
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import MembershipFormPage from '../../pages/formpage/MembershipFormPage';
 
 const FoodService = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [showUserForm, setShowUserForm] = useState(false);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -212,16 +214,20 @@ const FoodService = () => {
               Subscribe now to get 30% off at food services and enjoy exclusive access to special menu items.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link to='/membership-form'>
+                
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-gradient-to-r from-red-500 to-red-700 text-white font-bold lg:py-4 lg:px-8 px-2 py-2 text-sm lg:text-lg rounded-full transition-all duration-300"
+                  onClick={()=> setShowUserForm(true) }
                 >
                   Subscribe Now
-                </motion.button></Link>
+                </motion.button>
               </div>
             </motion.div>
+            <div>
+              {showUserForm && <MembershipFormPage onClose={() => setShowUserForm(false)} />}
+            </div>
     </div>
   );
 };

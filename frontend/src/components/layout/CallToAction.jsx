@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import RegistrationForm from '../form/RegistrationForm';
+import MembershipFormPage from '../../pages/formpage/MembershipFormPage';
 
 const CallToAction = () => {
     const [showUserForm, setShowUserForm] = useState(false);
@@ -26,7 +27,7 @@ const CallToAction = () => {
                         Buy Membership
                     </button>
                 </motion.div>
-                {showUserForm && <RegistrationForm onClose={() => setShowUserForm(false)} />}
+                {showUserForm && <MembershipFormPage onClose={() => setShowUserForm(false)} />}
             </div>
         </>
     );

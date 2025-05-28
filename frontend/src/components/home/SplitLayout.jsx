@@ -6,7 +6,7 @@ import mart from '../../assets/images/aarnamart1.jpg';
 import gym from '../../assets/images/gym.jpg';
 import food from '../../assets/images/food.jpg';
 import salon from '../../assets/images/salon.jpg';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import MembershipForm from '../../pages/formpage/MembershipFormPage';
 
 const SplitLayout = () => {
@@ -176,10 +176,10 @@ const SplitLayout = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 <div className="absolute bottom-4 lg:bottom-6 left-4 lg:left-6 transform translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                  <a href={section.path} className="flex items-center space-x-2 text-white">
+                  <Link to={section.path} className="flex items-center space-x-2 text-white">
                     <span className="text-xs lg:text-sm font-bold">EXPLORE MORE</span>
                     <ArrowRight className="h-3 w-3 lg:h-4 lg:w-4" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.div>

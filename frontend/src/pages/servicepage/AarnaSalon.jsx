@@ -115,15 +115,15 @@ const AarnaSalon = () => {
                     </div>
                     <div className="relative z-10 container mx-auto px-4 flex items-center lg:ml-[450px]">
                         <div className="mt-[120px] lg:mt-72" data-aos="fade-up" data-aos-delay="200">
-                            <h1 className="text-2xl lg:text-5xl font-bold mb-6 leading-tight lg:text-center">
-                                Welcome to <br /><span className='text-red-600 text-3xl text-outline-white'>Aarna UniSex Salon</span> <br /> were Beauty Redefined
+                            <h1 className="text-2xl lg:text-4xl font-bold mb-6 leading-tight lg:text-center">
+                                Welcome to <br /><span className='text-red-600 text-3xl lg:text-5xl text-outline-white'>Aarna UniSex Salon</span> <br /> were Beauty Redefined
                                 <span className="block text-white"></span>
                             </h1>
                             {/* <p className="lg:text-xl mb-2 text-white lg:text-center">
                                 Transform your look with premium beauty services, expert stylists,
                                 and unbeatable prices.
                             </p><br></br> */}
-                            <div className="space-x-4 lg:ml-48" data-aos="fade-up" data-aos-delay="400">
+                            <div className="space-x-4 lg:ml-40" data-aos="fade-up" data-aos-delay="400">
                                 <button
                                     onClick={() => setshowUserForm(true)}
                                     className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-600 transition-colors duration-300">
@@ -186,7 +186,7 @@ const AarnaSalon = () => {
                 <div className="py-8 lg:py-24 bg-gray-800">
                     <div className="container mx-auto px-4">
                         <h2 className="text-4xl font-bold text-center mb-8 lg:mb-16" data-aos="fade-up">Our Services</h2>
-                        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
+                        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 lg:max-w-7xl mx-auto">
                             {category.map((category, index) => (
                                 <div key={index} 
                                     className="relative group overflow-hidden rounded-lg"

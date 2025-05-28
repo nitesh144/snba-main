@@ -8,9 +8,11 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import MembershipFormPage from '../../pages/formpage/MembershipFormPage';
 
 const GymService = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [showUserForm, setShowUserForm] = useState(false);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate()
@@ -214,17 +216,20 @@ const GymService = () => {
         Join now and get 75% off at Gym Services, plus a free personal training session
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Link to='/membership-form'>
+          
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-red-500 to-red-700 text-white text-sm lg:text-lg font-bold py-2 px-2 lg:py-4 lg:px-8 rounded-full transition-all duration-300"
-
+              onClick={()=> navigate(setShowUserForm(true))}
             >
               Subscribe Now
-            </motion.button></Link>
+            </motion.button>
         </div>
       </motion.div>
+      <div>
+        {showUserForm && <MembershipFormPage onClose={()=> setShowUserForm(false)} />}
+      </div>
     </div>
   );
 };

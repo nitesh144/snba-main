@@ -266,12 +266,12 @@ const FranchisePage = () => {
             Contact us today to learn more about our franchise opportunities and take the first step towards business ownership
           </p>
           <div className="text-center space-x-5 ">
-            <button 
+            {/* <button 
               className="inline-flex items-center space-x-3 px-2 py-2 lg:px-8 lg:py-4 bg-gradient-to-r from-red-600 to-red-700 rounded-full text-sm lg:text-xl font-semibold hover:from-red-700 hover:to-red-800 transition-all transform hover:scale-105"
               onClick={openForm} // Add onClick handler to open the form
             >
               Apply Now<ArrowRight className="w-4 h-4 lg:w-6 lg:h-6 ml-2" />  
-            </button>
+            </button> */}
             <a
               href="tel:7400866821"
               className="inline-flex items-center space-x-3 px-2 py-2 lg:px-8 lg:py-4 m-2 bg-gradient-to-r from-red-600 to-red-700 rounded-full text-sm lg:text-xl font-semibold hover:from-red-700 hover:to-red-800 transition-all transform hover:scale-105"

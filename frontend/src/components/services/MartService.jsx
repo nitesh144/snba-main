@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ShoppingBag, Gift, Award, Clock, ChevronRight, Star } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import MembershipFormPage from '../../pages/formpage/MembershipFormPage';
 
 const MartService = () => {
 
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [showUserForm, setShowUserForm] = useState(false);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const navigate = useNavigate()
 
@@ -202,18 +204,20 @@ const MartService = () => {
               Shop now and enjoy discounts of up to 90% on your favorite products. Don't miss out on these unbeatable deals!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link to='/membership-form'>
+              
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-gradient-to-r from-red-500 to-red-700 text-white text-sm lg:text-lg font-bold py-2 px-2 lg:py-4 lg:px-8 rounded-full transition-all duration-300"
-                
+                onClick={()=> navigate(setShowUserForm(true))}
               >
                 Subscribe Now
-              </motion.button></Link>
+              </motion.button>
             </div>
           </motion.div>
-
+        </div>
+        <div>
+          {showUserForm && <MembershipFormPage onClose={()=> setShowUserForm(false)} /> }
         </div>
       </div>
       

@@ -5,6 +5,7 @@ import Salon from '../../assets/images/franchise/salon.jpg';
 import Gym from '../../assets/images/franchise/gym.jpg';
 import Food from '../../assets/images/franchise/food.jpg';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
 const Header = () => {
   const services = [
@@ -38,9 +39,17 @@ const Header = () => {
           <div className="mb-8">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-red-600">SNBA Consumers</h2>
           </div>
-          <button className="bg-red-600 text-white px-8 py-2 rounded-full text-lg font-semibold hover:bg-red-700 transition-colors">
+          {/* <button className="bg-red-600 text-white px-8 py-2 rounded-full text-lg font-semibold hover:bg-red-700 transition-colors">
             Apply now
-          </button>
+          </button> */}
+          <a
+              href="tel:7400866821"
+              className="inline-flex items-center space-x-3 px-2 py-2 lg:px-8 lg:py-4 m-2 bg-gradient-to-r from-red-600 to-red-700 rounded-full text-sm lg:text-xl font-semibold hover:from-red-700 hover:to-red-800 transition-all transform hover:scale-105"
+            >
+              {/* <Phone className="w-4 h-4 lg:w-6 lg:h-6" /> */}
+              <span className='text-white'>Call Now</span>
+              <ArrowRight className="w-4 h-4 lg:w-6 lg:h-6 text-white" />
+            </a>
         </div>
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
