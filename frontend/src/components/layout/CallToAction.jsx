@@ -27,7 +27,7 @@ const CallToAction = () => {
                         Buy Membership
                     </button>
                 </motion.div>
-                {showUserForm && <MembershipFormPage onClose={() => setShowUserForm(false)} />}
+                {showUserForm && <RegistrationForm onClose={() => setShowUserForm(false)} />}
             </div>
         </>
     );

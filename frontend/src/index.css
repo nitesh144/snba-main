@@ -207,3 +207,8 @@
   .pause-animation {
     animation-play-state: paused !important;
   }
+
+  /* scroll bar hide */
+  .hide-scrollbar::-webkit-scrollbar{
+    display: none;;
+  }

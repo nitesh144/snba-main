@@ -1,5 +1,6 @@
 import {BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import React, { useState, useEffect } from 'react';
+import { Toaster } from 'react-hot-toast';
 import Header from './components/layout/Header'
 import './index.css'
 import HomePage from './pages/homepage/HomePage';
@@ -25,7 +26,6 @@ import ShippingPage from './pages/policypage/ShippingPage';
 import BlogPage from './pages/blogpages/BlogPage';
 import GymBlog from './pages/blogpages/GymBlog';
 import FoodCourtBlog from './pages/blogpages/FoodCourtBlog';
-import Promotion from './components/home/Promotion';
 import ScrollToTop from './components/scroll/ScrollToTop';
 import MartBlog from './pages/blogpages/MartBlog';
 import SalonBlog from './pages/blogpages/SalonBlog';
@@ -52,6 +52,7 @@ function App() {
   // Once loading is complete, render the full application
   return (
     <div>
+      <Toaster position='top-center' />
       <Header/>
       <ScrollToTop/>
       <div>
@@ -66,7 +67,6 @@ function App() {
           <Route path='/terms-of-services' element={<TermsPage />} />
           <Route path='/privacy-policy' element={<PrivacyPage />} />
           <Route path='/refund-policy' element={<RefundPage />} />
-          <Route path='/blogs-page' element={<BlogPage/>} />
           <Route path='/aarna-gym' element={<AarnaGym/>} />
           <Route path='/aarna-mart' element={<AarnaMart/> } />
           <Route path='/aarna-salon' element={<AarnaSalon/>} />
@@ -76,6 +76,7 @@ function App() {
           <Route path='/frenchise-form' element={<FrenchiseForm/>} />
           <Route path='/shipping-policy' element={<ShippingPage/>} />
           {/* blogs pages */}
+          <Route path='/blogs-page' element={<BlogPage/>} />
           <Route path='/gym-blog' element={<GymBlog/>} />
           <Route path='/foodcourt-blog' element={<FoodCourtBlog/>} />
           <Route path='/mart-blog' element={<MartBlog/>}></Route>
@@ -85,7 +86,7 @@ function App() {
       <ScrollDown/>
       {/* <SocialSidebar/> */}
       <Footer/>
-      {/* <CallToAction/> */}
+      <CallToAction/>
     </div>
   );
 }
