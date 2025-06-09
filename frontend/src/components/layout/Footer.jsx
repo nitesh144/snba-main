@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 import { BsWhatsapp, BsTelephone } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-import annielogo from '../../assets/images/logo/Annie-Consumer.png';
+import annielogo from '../../assets/images/logo/Annie-consumer.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
