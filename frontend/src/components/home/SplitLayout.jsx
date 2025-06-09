@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import lifestyle from '../../assets/images/lifestyle.jpg';
-import mart from '../../assets/images/aarnamart1.jpg';
+import mart from '../../assets/images/annie-mart.jpg';
 import gym from '../../assets/images/gym.jpg';
 import food from '../../assets/images/food.jpg';
 import salon from '../../assets/images/salon.jpg';
 import { Link, useNavigate } from 'react-router-dom';
-import MembershipForm from '../../pages/formpage/MembershipFormPage';
+import RegistrationForm from '../form/RegistrationForm';
 
 const SplitLayout = () => {
 
@@ -17,32 +17,32 @@ const SplitLayout = () => {
 
   const sections = [
     {
-      title: 'AARNA UNISEX GYM',
+      title: 'ANNIE UNISEX GYM',
       subtitle: 'Where Wellness Meets Luxury',
       image: gym,
       text: 'Programs. Lessons. Sessions. Workouts. So many wonderful ways to spend time and reach your fitness goals in ultimate comfort.',
-      path: "/aarna-gym",
+      path: "/annie-gym",
     },
     {
-      title: 'AARNA UNISEX SALON',
+      title: 'ANNIE UNISEX SALON',
       subtitle: 'Exceptional Experiences',
       image: salon,
-      text: 'Treat yourself to the best at Aarna Salon with our expert hair coloring, relaxing massages, and trendy styling services. We’re here to enhance your beauty and confidence, every step of the way!',
-      path: "/aarna-salon",
+      text: 'Treat yourself to the best Annie Salon with our expert hair coloring, relaxing massages, and trendy styling services. We’re here to enhance your beauty and confidence, every step of the way!',
+      path: "/annie-salon",
     },
     {
-      title: 'AARNA MART',
+      title: 'ANNIE MART',
       subtitle: 'Curated Collections',
       image: mart,
-      text: 'Aarna Mart offers unbeatable variety with fresh groceries, daily essentials, and exclusive discounts. Enjoy shopping with convenience, quality, and amazing savings on every visit!',
-      path: "/aarna-mart",
+      text: 'Annie Mart offers unbeatable variety with fresh groceries, daily essentials, and exclusive discounts. Enjoy shopping with convenience, quality, and amazing savings on every visit!',
+      path: "/annie-mart",
     },
     {
-      title: 'AARNA FOODCOURT',
+      title: 'ANNIE FOODCOURT',
       subtitle: 'Farm to Table Excellence',
       image: food,
       text: 'Enjoy a delicious experience with our wide variety of food, restaurant dishes, and sweets. Whether you are a food lover or someone who enjoys sweets, we have something special for everyone.',
-      path: "/aarna-foodcourt",
+      path: "/annie-foodcourt",
     },
   ];
 
@@ -95,7 +95,7 @@ const SplitLayout = () => {
               <br />
               with
               <span className="mt-1 lg:mt-3 ml-26 lg:ml-0 block text-3xl lg:text-5xl bg-red-600 bg-clip-text text-transparent">
-                SNBA
+                Annie
                 <br />
                 Consumers
               </span>
@@ -186,7 +186,7 @@ const SplitLayout = () => {
           ))}
         </div>
       </div>
-      {showUserForm && <MembershipForm onClose={() => setShowUserForm(false)} />}
+      {showUserForm && <RegistrationForm onClose={() => setShowUserForm(false)} />}
     </div>
   );
 };

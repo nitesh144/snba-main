@@ -44,7 +44,7 @@ const ServicePage = () => {
     {
       icon: <ShoppingBag size={32} />,
       title: "Affordable Subscription",
-      description: "Aarna Mart offers an unbeatable subscription for just ₹99/month. This low-cost membership unlocks fantastic savings, ensuring that you can shop for your essentials without straining your budget or compromising quality.",
+      description: "Annie Mart offers an unbeatable subscription for just ₹99/month. This low-cost membership unlocks fantastic savings, ensuring that you can shop for your essentials without straining your budget or compromising quality.",
       highlightColor: "from-red-500 to-red-600",
       iconBg: "bg-red-500",
       delay: 0
@@ -52,7 +52,7 @@ const ServicePage = () => {
     {
       icon: <Gift size={32} />,
       title: "Massive Discounts",
-      description: "Enjoy discounts ranging from 10% to 90% on a wide variety of products at Aarna Mart! Our pricing strategy ensures that you save significantly on grocery bills, making shopping both smart and affordable.",
+      description: "Enjoy discounts ranging from 10% to 90% on a wide variety of products at Annie Mart! Our pricing strategy ensures that you save significantly on grocery bills, making shopping both smart and affordable.",
       highlightColor: "from-red-600 to-red-700",
       iconBg: "bg-red-600",
       delay: 0.2
@@ -60,7 +60,7 @@ const ServicePage = () => {
     {
       icon: <Award size={32} />,
       title: "Quality Products",
-      description: "At Aarna Mart, quality is our priority. We carefully select fresh, high-quality items to meet your needs, ensuring that you receive only the best products every time you shop with us.",
+      description: "At Annie Mart, quality is our priority. We carefully select fresh, high-quality items to meet your needs, ensuring that you receive only the best products every time you shop with us.",
       highlightColor: "from-red-700 to-red-800",
       iconBg: "bg-red-700",
       delay: 0.4
@@ -68,7 +68,7 @@ const ServicePage = () => {
     {
       icon: <Clock size={32} />,
       title: "Convenient Shopping",
-      description: "Aarna Mart provides a seamless shopping experience with well-organized aisles, friendly staff, and quick checkout options, making it easy for you to find everything you need, whether in-store or online.",
+      description: "Annie Mart provides a seamless shopping experience with well-organized aisles, friendly staff, and quick checkout options, making it easy for you to find everything you need, whether in-store or online.",
       highlightColor: "from-red-800 to-red-900",
       iconBg: "bg-red-800",
       delay: 0.6
@@ -97,7 +97,7 @@ const ServicePage = () => {
           className="text-center mb-16 relative"
         >
           <h1 className="text-5xl font-bold text-white mb-4">
-            Aarna Mart
+            Annie Mart
           </h1>
           <div className="w-32 h-1 bg-gradient-to-r from-red-500 to-red-700 mx-auto mt-2 rounded-full"></div>
           <p className="text-gray-400 text-lg max-w-2xl mt-2 mx-auto">

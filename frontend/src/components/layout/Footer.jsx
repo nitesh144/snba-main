@@ -1,14 +1,21 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 import { BsWhatsapp, BsTelephone } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-import aarnalogo from '../../assets/images/logo/aarna-logo.png';
-import snbalogo from '../../assets/images/logo/logo.png';
+import annielogo from '../../assets/images/logo/Annie-Consumer.png';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
-
+useEffect(() => {
+  AOS.init({
+    duration: 800,
+    once: false,
+    easing: 'ease-in-out',
+  });
+}, []);
     const socialLinks = [
         { icon: 'facebook', href: 'https://www.facebook.com/profile.php?id=61571678816978' },
         { icon: 'whatsapp', href: 'https://wa.me/+917400866821' },
@@ -17,15 +24,15 @@ const Footer = () => {
     ];
 
     const services = [
-        { name: 'AARNA MART', path: '/aarna-mart' },
-        { name: 'AARNA GYM', path: '/aarna-gym' },
-        { name: 'AARNA SALON', path: '/aarna-salon' },
-        { name: 'AARNA FOODCOURT', path: '/aarna-foodcourt' },
+        { name: 'ANNIE MART', path: '/annie-mart' },
+        { name: 'ANNIE GYM', path: '/annie-gym' },
+        { name: 'ANNIE SALON', path: '/annie-salon' },
+        { name: 'ANNIE FOODCOURT', path: '/annie-foodcourt' },
     ];
 
     const quickLinks = [
         { name: 'Contact Us', path: '/contact-us' },
-        { name: 'Blogs Page', path: '/blogs-page' },
+        { name: 'Blogs', path: '/blogs' },
         { name: 'Terms of Services', path: '/terms-of-services' },
         { name: 'Privacy Policy', path: '/privacy-policy' },
         { name: 'Refund Policy', path: '/refund-policy' },
@@ -33,43 +40,36 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="relative text-white bg-gradient-to-b from-gray-900 to-black">
-            {/* Decorative top border */}
-            {/* <div className="w-full h-1 bg-gradient-to-r from-red-600 via-red-500 to-red-600"></div> */}
-            
+        <footer className="relative text-white bg-gradient-to-b from-gray-900 to-black overflow-hidden">
+
             {/* Subtle background pattern */}
             <div className="absolute inset-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iLjEiPjxwYXRoIGQ9Ik0zNiAzNGM2LjYyNyAwIDEyLTUuMzczIDEyLTEycy01LjM3My0xMi0xMi0xMi0xMiA1LjM3My0xMiAxMiA1LjM3MyAxMiAxMiAxMnptMjQgMGM2LjYyNyAwIDEyLTUuMzczIDEyLTEycy01LjM3My0xMi0xMi0xMi0xMiA1LjM3My0xMiAxMiA1LjM3MyAxMiAxMiAxMnptLTEyIDEyYzYuNjI3IDAgMTItNS4zNzMgMTItMTJzLTUuMzczLTEyLTEyLTEyLTEyIDUuMzczLTEyIDEyIDUuMzczIDEyIDEyIDEyeiIvPjwvZz48L2c+PC9zdmc+')]"></div>
             
             <div className="relative px-4 py-10 mx-auto max-w-7xl sm:px-6 lg:px-8 lg:py-16">
                 <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
                     {/* Company Logos Column */}
-                    <div className="flex flex-col space-y-8">
+                    <div className="flex flex-col space-y-8" data-aos="fade-right">
                         <div className="flex flex-col space-y-6 items-center md:items-start">
                             <div className="transform transition-transform duration-300 hover:scale-105">
                                 <img
-                                    src={snbalogo}
-                                    alt="SNBA Logo"
-                                    className="h-14 w-auto object-contain"
+                                    src={annielogo}
+                                    alt="annie consumers"
+                                    className="h-56 w-56"
                                 />
                             </div>
-                            <div className="transform transition-transform duration-300 hover:scale-105">
-                                <img
-                                    src={aarnalogo}
-                                    alt="Aarna Logo"
-                                    className="h-24 w-auto object-contain"
-                                />
-                            </div>
+                            
                         </div>
                     </div>
 
                     {/* Services Column */}
-                    <div className="space-y-6">
-                        <h3 className="text-xl font-bold tracking-wide text-white after:content-[''] after:block after:w-12 after:h-1 after:bg-red-500 after:mt-1 after:rounded-full">
+                    <div className="space-y-6" >
+                        <h3 className="text-xl font-bold tracking-wide text-white after:content-[''] after:block after:w-12 after:h-1 after:bg-red-500 after:mt-1 after:rounded-full" data-aos="fade-up"    >
                             Our Services
                         </h3>
                         <ul className="space-y-3">
                             {services.map((service, index) => (
-                                <li key={index} className="transform transition-all duration-300 hover:translate-x-2">
+                                <li data-aos="fade-up" data-aos-delay="200"
+                                key={index} className="transform transition-all duration-300 hover:translate-x-2">
                                     <Link
                                         to={service.path}
                                         className="group flex items-center space-x-2 text-gray-300 hover:text-white"
@@ -84,12 +84,14 @@ const Footer = () => {
 
                     {/* Quick Links Column */}
                     <div className="space-y-6">
-                        <h3 className="text-xl font-bold tracking-wide text-white after:content-[''] after:block after:w-12 after:h-1 after:bg-red-500 after:mt-1 after:rounded-full">
+                        <h3 className="text-xl font-bold tracking-wide text-white after:content-[''] after:block after:w-12 after:h-1 after:bg-red-500 after:mt-1 after:rounded-full" 
+                        data-aos="fade-up">
                             Quick Links
                         </h3>
                         <ul className="space-y-3">
                             {quickLinks.map((link, index) => (
-                                <li key={index} className="transform transition-all duration-300 hover:translate-x-2">
+                                <li data-aos="fade-right" data-aos-delay="200" 
+                                key={index} className="transform transition-all duration-300 hover:translate-x-2">
                                     <Link
                                         to={link.path}
                                         className="group flex items-center space-x-2 text-gray-300 hover:text-white"
@@ -104,10 +106,11 @@ const Footer = () => {
 
                     {/* Contact Column */}
                     <div className="space-y-6">
-                        <h3 className="text-xl md:text-xl font-bold tracking-wide text-white after:content-[''] after:block after:w-12 after:h-1 after:bg-red-500 after:mt-1 after:rounded-full">
+                        <h3 data-aos="fade-up" 
+                        className="text-xl md:text-xl font-bold tracking-wide text-white after:content-[''] after:block after:w-12 after:h-1 after:bg-red-500 after:mt-1 after:rounded-full">
                             Get in Touch
                         </h3>
-                        <div className="space-y-4">
+                        <div className="space-y-4" data-aos="fade-left" data-aos-delay="300">
                             <a
                                 href="https://maps.app.goo.gl/bZDwXjpgNYbFmjbL8"
                                 target="_blank"
@@ -115,7 +118,7 @@ const Footer = () => {
                                 className="group flex items-start space-x-3 text-gray-300 hover:text-white transition-colors duration-300"
                             >
                                 <MapPin size={18} className="text-red-500 mt-1 shrink-0 group-hover:text-red-400" />
-                                <span className="text-sm">SNBA Consumers, 1st floor, Mansarovar Bhawan, NIT Road, Raipur, 492010, Chhattisgarh, India</span>
+                                <span className="text-sm">Annie Consumers, 1st floor, Mansarovar Bhawan, NIT Road, Raipur, 492010, Chhattisgarh, India</span>
                             </a>
 
                             <a
@@ -145,20 +148,20 @@ const Footer = () => {
                             </a>
 
                             <a
-                                href="mailto:info@snbaconsumers.com"
+                                href="mailto:info@annieconsumers.com"
                                 className="group flex items-center space-x-3 text-gray-300 hover:text-white transition-colors duration-300"
                             >
                                 <Mail size={16} className="text-red-500 shrink-0 group-hover:text-red-400" />
-                                <span className="text-sm break-all">info@snbaconsumers.com</span>
+                                <span className="text-sm break-all">info@annieconsumers.com</span>
                             </a>
                         </div>
 
                         {/* Social Media Links */}
                         <div className="pt-4">
                             <h4 className="text-sm font-semibold mb-3 text-gray-100">Follow Us</h4>
-                            <div className="flex space-x-4">
+                            <div className="flex space-x-4" data-aos="fade-bottom" >
                                 {socialLinks.map((social, index) => (
-                                    <a
+                                    <a data-aos="fade-up" data-aos-delay="400"
                                         key={index}
                                         href={social.href}
                                         className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 hover:bg-red-600 transition-all duration-300 transform hover:scale-110"
@@ -177,7 +180,7 @@ const Footer = () => {
                 {/* Bottom Bar */}
                 <div className="pt-2 mb-3 mt-10 border-t border-gray-800">
                     <div className="flex flex-col justify-between items-center text-gray-300">
-                        <p className="text-sm">© {currentYear} <span className='text-red-500'> SNBA Consumers</span>. All rights reserved.</p>
+                        <p className="text-sm">© {currentYear} <span className='text-red-500'> Annie Consumers</span>. All rights reserved.</p>
                         
                     </div>
                 </div>

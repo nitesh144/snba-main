@@ -12,7 +12,7 @@ const BlogPage = () => {
   const blogPosts = [
     {
       id: 1,
-      title: "Looking for a gym in Raipur?",
+      title: "Annie Gym – Best Fitness Center for Strength, Cardio & Personal Training Near You",
       excerpt: "Discover the best gyms in Raipur with our comprehensive guide.",
       category: "Tips & Tricks",
       author: "Emma Wilson",
@@ -23,8 +23,8 @@ const BlogPage = () => {
     },
     {
       id: 2,
-      title: "Understanding data plans: which is right for you?",
-      excerpt: "Compare goodybags and find the perfect plan for your needs.",
+      title: "Annie Salon – Top Beauty Salon for Hair, Skin & Spa Services",
+      excerpt: "Discover the best salon in Raipur with our comprehensive guide.",
       category: "Guides",
       author: "James Taylor",
       date: "15 Feb 2025",
@@ -32,21 +32,21 @@ const BlogPage = () => {
       readTime: "6 min read",
       path:'/salon-blog'
     },
-    {
-      id: 3,
-      title: "Community heroes: meet our top contributors",
-      excerpt: "Celebrating the members who make our community special.",
-      category: "Community",
-      author: "Sarah Ahmed",
-      date: "10 Feb 2025",
-      image: mart,
-      readTime: "5 min read",
-      path:'/mart-blog'
-    },
+    // {
+    //   id: 3,
+    //   title: "Community heroes: meet our top contributors",
+    //   excerpt: "Celebrating the members who make our community special.",
+    //   category: "Community",
+    //   author: "Sarah Ahmed",
+    //   date: "10 Feb 2025",
+    //   image: mart,
+    //   readTime: "5 min read",
+    //   path:'/mart-blog'
+    // },
     {
       id: 4,
-      title: "New phones we're excited about in 2025",
-      excerpt: "The latest devices that deserve your attention this year.",
+      title: "Annie Food Court – Delicious Multi-Cuisine Dining & Street Food Experience",
+      excerpt: "Discover the best restraunt in Raipur ",
       category: "News",
       author: "Daniel Park",
       date: "5 Feb 2025",
@@ -68,7 +68,7 @@ const BlogPage = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-black to-red-900 text-white py-20">
         <div className="container mx-auto px-4 py-16 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Welcome to the SNBA Consumers blog</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Welcome to the Annie Consumers blog</h1>
           <p className="text-xl max-w-2xl mx-auto mb-8">Discover tips, guides, and stories from our community</p>
           <div className="relative max-w-md mx-auto">
             <input
@@ -132,7 +132,7 @@ const BlogPage = () => {
       <section className="py-16 bg-gradient-to-r from-black to-red-900 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-3">Stay in the loop</h2>
-          <p className="max-w-xl mx-auto mb-8">Get the latest SNBA Consumer news, tips and community stories delivered straight to your inbox.</p>
+          <p className="max-w-xl mx-auto mb-8">Get the latest Annie Consumer news, tips and community stories delivered straight to your inbox.</p>
           <div className="flex flex-col md:flex-row max-w-md mx-auto">
             <input
               type="email"

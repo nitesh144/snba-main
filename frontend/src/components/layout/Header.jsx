@@ -1,9 +1,7 @@
-
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import logo from '../../assets/images/logo/logo.png';
+import logo from '../../assets/images/logo/new-logo.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,7 +34,7 @@ const Navbar = () => {
     { name: 'About Us', path: '/aboutus' },
     { name: 'Membership Plan', path: '/membershipplans' },
     { name: 'Career', path: '/career' },
-    {name: 'Franchisee', path: '/frenchise' },
+    {name: 'Franchise', path: '/franchise' },
   ];
 
   return (
@@ -52,8 +50,8 @@ const Navbar = () => {
           <div className="flex items-center z-10">
             {/* Placeholder for logo - replace with your actual logo */}
             <Link to='/'>
-            <div className="h-12 w-28 lg:h-12 lg:w-36 flex items-center justify-center">
-              <img src={logo} alt="snba-logo"  />
+            <div className="h-10 w-40 lg:h-14 lg:w-48 flex items-center justify-center">
+              <img src={logo} alt="annie-logo" />
             </div>
             </Link>
           </div>

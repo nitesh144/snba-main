@@ -85,7 +85,7 @@ const ShippingPage = () => {
         <div className="relative z-10 max-w-4xl mx-auto py-16">
           <div className="animate-fade-in-down">
             <h1 className="text-2xl lg:text-4xl font-extrabold text-white sm:text-5xl tracking-tight mb-4">Shipping & Delivery Policy</h1>
-            <p className="text-md lg:text-xl text-gray-300">At Aarna Group, we are committed to delivering your orders promptly and efficiently—whether you shop online or at our physical grocery store. Please read our shipping and delivery policy carefully for details on processing times, shipping methods, costs, and more.</p>
+            <p className="text-md lg:text-xl text-gray-300">At Annie Consumers, we are committed to delivering your orders promptly and efficiently—whether you shop online or at our physical grocery store. Please read our shipping and delivery policy carefully for details on processing times, shipping methods, costs, and more.</p>
           </div>
         </div>
 
@@ -102,7 +102,7 @@ const ShippingPage = () => {
           icon={<Clock size={24} />}
         >
           <ul className="list-disc pl-5 space-y-2 text-sm lg:text-lg">
-            <li><span className="font-semibold text-red-400">Online Orders</span> are processed <span className="italic">Monday to Sunday</span>, excluding public holidays.</li>
+            <li><span className="font-semibold text-red-400">Online Orders</span> are processed <span className="italic">Monday to Sunday</span>.</li>
             <li>Orders placed <span className="font-semibold text-red-400">before 10:00 AM IST</span> are processed the <span className="italic">same day</span>.</li>
             <li>Orders placed <span className="font-semibold text-red-400">after 12:00 PM IST</span> or on non-business days will be processed the <span className="italic">next business day</span>.</li>
             <li>For orders from our <span className="font-semibold text-red-400">MART</span> with local delivery, processing is typically done within <span className="italic">4–6 hours</span> of order confirmation.</li>
@@ -174,7 +174,7 @@ const ShippingPage = () => {
           <ul className="list-disc pl-5 space-y-2">
             <li>For <span className="font-semibold text-red-400">damaged deliveries</span>, report within 48 hours with clear photos of the packaging and product.</li>
             <li>For <span className="font-semibold text-red-400">lost packages</span>, contact us. If the package cannot be located, we will issue a replacement or full refund.</li>
-            <li>Aarna Group is not liable for delays due to courier issues but will assist you in resolving such matters.</li>
+            <li>Annie Consumers is not liable for delays due to courier issues but will assist you in resolving such matters.</li>
           </ul>
         </PolicySection>
 
@@ -195,7 +195,7 @@ const ShippingPage = () => {
           <div className="space-y-2">
             <div className="flex items-center">
               <Mail className="mr-2 text-red-400" size={18} />
-              <span><span className="font-semibold">Email:</span> info@snbaconsumers.com</span>
+              <span><span className="font-semibold">Email:</span> info@annieconsumers.com</span>
             </div>
             <div className="flex items-center">
               <Phone className="mr-2 text-red-400" size={18} />
@@ -216,7 +216,7 @@ const ShippingPage = () => {
       {/* Footer */}
       <footer className="bg-red-950 py-8 text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <p className="text-white text-lg mb-2">Thank you for choosing Aarna Group.</p>
+          <p className="text-white text-lg mb-2">Thank you for choosing Annie Consumers.</p>
           <p className="text-gray-300">Whether you shop online or visit our store, we are dedicated to delivering quality and convenience to your doorstep.</p>
         </div>
       </footer>

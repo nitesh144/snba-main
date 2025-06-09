@@ -22,7 +22,7 @@ const TestimonialsSection = () => {
       id: 2,
       name: 'Mukul',
       role: 'Regular Customer',
-      content: 'SNBA Lifestyle Hub is a game changer! The quality of services is top-notch, and I appreciate the focus on wellness and community. It truly feels like a home away from home.',
+      content: 'Annie Lifestyle Hub is a game changer! The quality of services is top-notch, and I appreciate the focus on wellness and community. It truly feels like a home away from home.',
       rating: 5,
       image: dp2
     },

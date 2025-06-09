@@ -1,16 +1,27 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Phone, Store, Dumbbell, Scissors, UtensilsCrossed, ArrowRight, Check, Building2, TrendingUp, Users, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import FranchiseForm from '../../components/form/FrenchiseForm'; // Import the FranchiseForm component
+import FranchiseForm from '../../components/form/FrenchiseForm';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const FranchisePage = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+      easing: 'ease-in-out',
+    });
+  }, []);
+
   const [selectedFranchise, setSelectedFranchise] = useState('mart');
   const [hoveredPolicyIndex, setHoveredPolicyIndex] = useState(null);
   const [hoveredBenefitIndex, setHoveredBenefitIndex] = useState(null);
   const [isFormOpen, setIsFormOpen] = useState(false); // State to control form visibility
   const navigate = useNavigate();
+
 
   const benefits = [
     {
@@ -37,9 +48,9 @@ const FranchisePage = () => {
 
   const franchises = {
     mart: {
-      title: 'Aarna Mart',
+      title: 'Annie Mart',
       icon: Store,
-      description: 'Join the Aarna Mart family and start your own retail franchise!',
+      description: 'Join the Annie Mart family and start your own retail franchise!',
       policies: [
         'Initial Investment for store setup and inventory',
         'One-time franchise fee for branding access',
@@ -59,9 +70,9 @@ const FranchisePage = () => {
       ]
     },
     gym: {
-      title: 'Aarna Gym',
+      title: 'Annie Gym',
       icon: Dumbbell,
-      description: 'Turn your passion for fitness into a business with Aarna Gym franchise!',
+      description: 'Turn your passion for fitness into a business with Annie Gym franchise!',
       policies: [
         'Initial Investment for gym setup and equipment',
         'One-time franchise fee for brand access',
@@ -81,9 +92,9 @@ const FranchisePage = () => {
       ]
     },
     salon: {
-      title: 'Aarna Salon',
+      title: 'Annie Salon',
       icon: Scissors,
-      description: 'Build your beauty empire with Aarna Salon franchise!',
+      description: 'Build your beauty empire with Annie Salon franchise!',
       policies: [
         'Initial Investment for salon setup',
         'One-time franchise fee for brand rights',
@@ -103,9 +114,9 @@ const FranchisePage = () => {
       ]
     },
     foodCourt: {
-      title: 'Aarna Food Court',
+      title: 'Annie Food Court',
       icon: UtensilsCrossed,
-      description: 'Create a culinary destination with Aarna Food Court franchise!',
+      description: 'Create a culinary destination with Annie Food Court franchise!',
       policies: [
         'Initial Investment for food court setup',
         'One-time franchise fee for brand access',
@@ -137,16 +148,18 @@ const FranchisePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white">
+    <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white overflow-hidden" >
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-r from-black to-gray-900 py-20 " >
         <div className="absolute inset-0 opacity-10"></div>
         <div className="container mx-auto px-4 relative">
-          <h1 className="text-3xl md:text-5xl mt-10 font-bold text-center mb-8 bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">
-          Unlock Your Future with a Proven Franchise Opportunity!
+          <h1 data-aos="fade-up"
+            className="text-3xl md:text-5xl mt-10 font-bold text-center mb-8 bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">
+            Unlock Your Future with a Proven Franchise Opportunity!
           </h1>
-          <p className="text-sm md:text-lg max-w-3xl lg:max-w-7xl mx-auto text-gray-300 text-justify border-2 border-red-500 p-2 rounded-lg">
-          At SNBA CONSUMERS, we're not just offering a business opportunity—we're providing a chance to be part of something bigger. With our established and successful franchise model, you're stepping into a world of support, innovation, and unlimited potential. As a franchise provider, we've perfected the formula for success, and now we're inviting investors like you to join our growing network. Our comprehensive training, marketing strategies, and ongoing support will ensure that you have everything you need to thrive. Don't just start a business—become a part of a brand that's changing the game and delivering remarkable returns. The future is waiting—let's build it together!
+          <p data-aos="fade-left"
+            className="text-sm md:text-lg max-w-3xl lg:max-w-7xl mx-auto text-gray-300 text-justify border-2 border-red-500 p-2 rounded-lg">
+            At ANNIE CONSUMERS, we're not just offering a business opportunity—we're providing a chance to be part of something bigger. With our established and successful franchise model, you're stepping into a world of support, innovation, and unlimited potential. As a franchise provider, we've perfected the formula for success, and now we're inviting investors like you to join our growing network. Our comprehensive training, marketing strategies, and ongoing support will ensure that you have everything you need to thrive. Don't just start a business—become a part of a brand that's changing the game and delivering remarkable returns. The future is waiting—let's build it together!
           </p>
         </div>
       </div>
@@ -157,7 +170,8 @@ const FranchisePage = () => {
           {Object.entries(franchises).map(([key, value]) => {
             const Icon = value.icon;
             return (
-              <button
+              <button data-aos="flip-up"
+                data-aos-delay="200"
                 key={key}
                 className={`p-6 rounded-xl transition-all transform hover:scale-105 ${selectedFranchise === key
                   ? 'bg-gradient-to-r from-red-600 to-red-700 shadow-lg shadow-red-500/20'
@@ -190,6 +204,8 @@ const FranchisePage = () => {
                 <div className="space-y-4">
                   {franchises[selectedFranchise].policies.map((policy, index) => (
                     <div
+                      data-aos="flip-up"
+                      data-aos-delay={100 * index}
                       key={index}
                       className="flex items-start space-x-3 hover:translate-x-2 transition-transform"
                       onMouseEnter={() => setHoveredPolicyIndex(index)}
@@ -211,6 +227,8 @@ const FranchisePage = () => {
                 <div className="space-y-4">
                   {franchises[selectedFranchise].benefits.map((benefit, index) => (
                     <div
+                      data-aos="zoom-in"
+                      data-aos-delay={200 * index}
                       key={index}
                       className="flex items-center space-x-3 hover:translate-x-2 transition-transform"
                       onMouseEnter={() => setHoveredBenefitIndex(index)}
@@ -230,20 +248,18 @@ const FranchisePage = () => {
         {/* Benefits Section */}
         <div className="py-20 px-4">
           <div className="max-w-6xl mx-auto">
-            <motion.h2
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              className="text-2xl lg:text-4xl font-bold text-center mb-16"
+            <h2
+
+              className="text-2xl lg:text-4xl font-bold text-center mb-16" data-aos="fade-up-right"
             >
-              Why Choose Aarna Franchise?
-            </motion.h2>
+              Why Choose Annie Franchise?
+            </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {benefits.map((benefit, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                   data-aos="zoom-in"
+            data-aos-delay={200 * index}
                   className="bg-gray-900 p-6 rounded-lg hover:bg-gray-800 transition-colors duration-300 shadow-md shadow-red-500"
                 >
                   <div className="bg-red-600 p-3 rounded-lg inline-block mb-4">
@@ -251,7 +267,7 @@ const FranchisePage = () => {
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
                   <p className="text-gray-400">{benefit.description}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -259,13 +275,13 @@ const FranchisePage = () => {
 
         {/* Contact Section */}
         <div className="text-center max-w-3xl mx-auto">
-          <h3 className="text-xl lg:text-3xl font-bold mb-6 bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">
+          <h3 className="text-xl lg:text-3xl font-bold mb-6 bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent" data-aos="fade-up-right">
             Ready to Start Your Journey?
           </h3>
-          <p className="text-sm lg:text-xl mb-8 text-gray-300">
+          <p className="text-sm lg:text-xl mb-8 text-gray-300" data-aos="fade-left">
             Contact us today to learn more about our franchise opportunities and take the first step towards business ownership
           </p>
-          <div className="text-center space-x-5 ">
+          <div className="text-center space-x-5" data-aos="fade-down">
             {/* <button 
               className="inline-flex items-center space-x-3 px-2 py-2 lg:px-8 lg:py-4 bg-gradient-to-r from-red-600 to-red-700 rounded-full text-sm lg:text-xl font-semibold hover:from-red-700 hover:to-red-800 transition-all transform hover:scale-105"
               onClick={openForm} // Add onClick handler to open the form
@@ -285,9 +301,9 @@ const FranchisePage = () => {
       </div>
 
       {/* Render the FranchiseForm component */}
-      <FranchiseForm 
-        isOpen={isFormOpen} 
-        onClose={closeForm} 
+      <FranchiseForm
+        isOpen={isFormOpen}
+        onClose={closeForm}
       />
     </div>
   );

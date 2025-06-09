@@ -9,14 +9,14 @@ const ContactSection = () => {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Visit Us",
-      content: "SNBA Consumers, Mansarowar Bhawan, NIT Road, Raipur, Chhattisgarh – 492010"
+      content: "Annie Consumers, Mansarowar Bhawan, NIT Road, Raipur, Chhattisgarh – 492010"
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email Us",
       content: [
-        {  number: "info@snbaconsumers.com" },
-        {  number: "snbaconsumers@gmail.com" }
+        {  number: "info@annieconsumers.com" },
+        {  number: "annieconsumers@gmail.com" }
       ],
     },
     {
@@ -31,7 +31,7 @@ const ContactSection = () => {
     {
       icon: <Globe className="w-6 h-6" />,
       title: "Browse",
-      content: "www.snbaconsumers.com"
+      content: "www.annieconsumers.com"
     }
   ];
 
@@ -41,7 +41,7 @@ const ContactSection = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <motion.div
+            <div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -51,13 +51,13 @@ const ContactSection = () => {
               <p className="text-gray-400 text-sm lg:text-lg max-w-2xl mx-auto">
                 Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
               </p>
-            </motion.div>
+            </div>
           </div>
 
           {/* Contact Info Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {contactInfo.map((info, index) => (
-              <motion.div
+              <div
                 key={index}
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -68,18 +68,18 @@ const ContactSection = () => {
                   <CardContent className="p-6 flex flex-col items-center justify-center min-h-[200px]">
                     <div className="flex flex-col items-center text-center space-y-4">
                       <div className="w-14 h-14 rounded-full bg-gradient-to-br from-red-600 to-red-700 p-0.5 group-hover:scale-110 transition-transform duration-300">
-                        <motion.div initial={{ opacity: 0, y: 100 }}
+                        <div initial={{ opacity: 0, y: 100 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay:0.6 }}
                         className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                          <motion.div
+                          <div
                           initial={{ opacity: 0, x: 100 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           transition={{ duration: 0.5, delay:0.6 }} 
                           className="text-red-600 group-hover:text-red-300 transition-colors">
                             {info.icon}
-                          </motion.div>
-                        </motion.div>
+                          </div>
+                        </div>
                       </div>
                       <h3 className="text-lg font-semibold text-white">{info.title}</h3>
                       {Array.isArray(info.content) ? (
@@ -97,13 +97,13 @@ const ContactSection = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
             ))}
           </div>
 
           <div className="grid md:grid-cols-1 gap-8 items-stretch">
             {/* Map Section */}
-            <motion.div
+            <div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -128,7 +128,7 @@ const ContactSection = () => {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
   }, []);
 
   const sections = [
-    { id: 'intro', title: 'Introduction', number: '1', content: 'Welcome to SNBA Consumer! Your privacy is important to us, and this Privacy Policy explains how we collect, use, and protect your personal information. By using our services, you agree to the practices described in this policy.' },
+    { id: 'intro', title: 'Introduction', number: '1', content: 'Welcome to Annie Consumer! Your privacy is important to us, and this Privacy Policy explains how we collect, use, and protect your personal information. By using our services, you agree to the practices described in this policy.' },
     {
       id: 'collect', title: 'Information We Collect', number: '2', content: `
       **a. Information You Provide to Us:**
@@ -70,7 +70,7 @@ Despite our efforts, no system is 100% secure, and we cannot guarantee the absol
 ●	Deletion: Request the deletion of your data.
 ●	Portability: Request your data in a portable format.
 ●	Opt-Out: Opt-out of marketing communications or data sharing for targeted ads.
-To exercise your rights, contact us at snbaconsumers@gmail.com.
+To exercise your rights, contact us at annieconsumers@gmail.com.
 ` },
     {
       id: 'third-party', title: 'Third-Party Links', number: '8', content: `
@@ -78,7 +78,7 @@ To exercise your rights, contact us at snbaconsumers@gmail.com.
     {
       id: 'retention', title: 'Data Retention', number: '9', content: `
       We retain your information only as long as necessary to fulfill the purposes outlined in this policy or to comply with legal obligations.` },
-    { id: 'children', title: "Children's Privacy", number: '10', content: 'SNBA Consumer services are not directed to individuals under the age of 13. We do not knowingly collect personal information from children without parental consent.' },
+    { id: 'children', title: "Children's Privacy", number: '10', content: 'Annie Consumer services are not directed to individuals under the age of 13. We do not knowingly collect personal information from children without parental consent.' },
     { id: 'changes', title: 'Changes to This Policy', number: '11', content: 'We may update this Privacy Policy periodically. Changes will be posted on this page, and significant updates may be communicated via email or app notifications.' },
 
   ];
@@ -158,7 +158,7 @@ To exercise your rights, contact us at snbaconsumers@gmail.com.
 
       <div className="container mx-auto px-4 max-w-5xl bg-gray-900 p-8 overflow-hidden rounded-lg shadow-lg border border-red-600">
         <h1 className="text-4xl font-bold mb-4 text-center text-red-500">Privacy Policy</h1>
-        <p className="text-center text-red-400 mb-8">SNBA Consumer</p>
+        <p className="text-center text-red-400 mb-8">Annie Consumers</p>
 
         {/* Navigation Sidebar + Content */}
         <div className="flex flex-col lg:flex-row gap-8">
@@ -178,9 +178,9 @@ To exercise your rights, contact us at snbaconsumers@gmail.com.
               <div className="p-4 rounded-lg">
                 <p className="mb-4 text-sm lg:text-lg">If you have questions or concerns about this Privacy Policy, please contact us at:</p>
                 <div className="space-y-2 text-sm lg:text-lg">
-                  <p><strong>Email:</strong> info@snbaconsumers.com</p>
-                  <p><strong>Phone:</strong> 910922890</p>
-                  <p><strong>Address:</strong> SNBA Consumers, 2nd floor, Mansarovar Bhavan, NIT Road, Raipur, 492010, Chhattisgarh, India</p>
+                  <p><strong>Email:</strong> info@annieconsumers.com</p>
+                  <p><strong>Phone:</strong> 7400866821</p>
+                  <p><strong>Address:</strong> Annie Consumers, 1st floor, Mansarovar Bhavan, NIT Road, Raipur, 492010, Chhattisgarh, India</p>
                 </div>
               </div>
             </section>

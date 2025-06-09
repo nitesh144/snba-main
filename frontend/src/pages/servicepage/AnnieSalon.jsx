@@ -1,5 +1,5 @@
 import { CheckCircle2, Scissors, Users, Heart, Clock, Trophy, ArrowRight, Check, X } from 'lucide-react';
-import aarnaSalonBg from '../../assets/images/unisex-salon.jpg';
+import AnnieSalonBg from '../../assets/images/unisex-salon.jpg';
 import haircut from '../../assets/images/salon-category/haircut.jpg'
 import haircolor from '../../assets/images/salon-category/Hair-Color.jpg'
 import facial from '../../assets/images/salon-category/facial.webp'
@@ -8,18 +8,18 @@ import bridal from '../../assets/images/salon-category/bridal.jpeg'
 import waxing from '../../assets/images/salon-category/waxing.jpg'
 import mobilesalon from '../../assets/images/mobile/mobile-salon.png'
 import React, { useState, useEffect } from 'react';
-import MembershipFormPage from '../formpage/MembershipFormPage';
 // Import AOS
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import RegistrationForm from '../../components/form/RegistrationForm';
 
-const AarnaSalon = () => {
+const AnnieSalon = () => {
     const [showUserForm, setshowUserForm] = useState(false);
 
     // Initialize AOS
     useEffect(() => {
         AOS.init({
-            duration: 1000,
+            duration: 800,
             once: false,
             mirror: true,
             offset: 120,
@@ -55,7 +55,7 @@ const AarnaSalon = () => {
     const comparisonData = [
         {
             category: "Membership Offers",
-            aarna: [
+            AnnieSalon: [
                 "Huge savings on memberships!",
                 "All-inclusive beauty services",
                 "No hidden costs",
@@ -70,7 +70,7 @@ const AarnaSalon = () => {
         },
         {
             category: "Beauty Services",
-            aarna: [
+            AnnieSalon: [
                 "Comprehensive hair and skin treatments",
                 "Professional makeup services",
                 "Customized beauty packages",
@@ -85,7 +85,7 @@ const AarnaSalon = () => {
         },
         {
             category: "Facilities",
-            aarna: [
+            AnnieSalon: [
                 "Modern, hygienic salon environment",
                 "High-end beauty products",
                 "Experienced beauticians",
@@ -107,7 +107,7 @@ const AarnaSalon = () => {
                 <div className="relative h-screen">
                     <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent">
                         <img
-                            src={aarnaSalonBg}
+                            src={AnnieSalonBg}
                             alt="Salon Background"
                             className="w-screen h-screen  hidden md:block lg:block overflow-hidden"
                         />
@@ -116,13 +116,10 @@ const AarnaSalon = () => {
                     <div className="relative z-10 container mx-auto px-4 flex items-center lg:ml-[450px]">
                         <div className="mt-[120px] lg:mt-72" data-aos="fade-up" data-aos-delay="200">
                             <h1 className="text-2xl lg:text-4xl font-bold mb-6 leading-tight lg:text-center">
-                                Welcome to <br /><span className='text-red-600 text-3xl lg:text-5xl text-outline-white'>Aarna UniSex Salon</span> <br /> were Beauty Redefined
+                                Welcome to <br /><span className='text-red-600 text-3xl lg:text-5xl text-outline-white'>Annie UniSex Salon</span> <br /> were Beauty Redefined
                                 <span className="block text-white"></span>
                             </h1>
-                            {/* <p className="lg:text-xl mb-2 text-white lg:text-center">
-                                Transform your look with premium beauty services, expert stylists,
-                                and unbeatable prices.
-                            </p><br></br> */}
+                            
                             <div className="space-x-4 lg:ml-40" data-aos="fade-up" data-aos-delay="400">
                                 <button
                                     onClick={() => setshowUserForm(true)}
@@ -155,7 +152,7 @@ const AarnaSalon = () => {
                                 <button
                                     onClick={() => setshowUserForm(true)}
                                     className="mt-8 bg-red-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-600 transition-colors duration-300"
-                                    data-aos="fade-up" data-aos-delay="800">
+                                    data-aos="fade-up" data-aos-delay="400">
                                     Start Your Beauty Journey
                                 </button>
                             </div>
@@ -166,7 +163,7 @@ const AarnaSalon = () => {
                 {/* Features Section */}
                 <div className="py-8 lg:py-24 bg-gray-800">
                     <div className="container mx-auto px-4">
-                        <h2 className="text-2xl lg:text-4xl font-bold text-center mb-8 lg:mb-16" data-aos="fade-up">Why Choose Aarna Salon?</h2>
+                        <h2 className="text-2xl lg:text-4xl font-bold text-center mb-8 lg:mb-16" data-aos="fade-up">Why Choose Annie Salon?</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
                             {features.map((feature, index) => (
                                 <div key={index} 
@@ -183,7 +180,7 @@ const AarnaSalon = () => {
                 </div>
 
                 {/* Services Section */}
-                <div className="py-8 lg:py-24 bg-gray-800">
+                <div className="py-8 lg:py-0 bg-gray-800">
                     <div className="container mx-auto px-4">
                         <h2 className="text-4xl font-bold text-center mb-8 lg:mb-16" data-aos="fade-up">Our Services</h2>
                         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 lg:max-w-7xl mx-auto">
@@ -195,7 +192,7 @@ const AarnaSalon = () => {
                                     <img
                                         src={category.image}
                                         alt={category.name}
-                                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                                        className="w-full h-48 lg:h-64 object-cover group-hover:scale-110 transition-transform duration-300"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-75"></div>
                                     <div className="absolute bottom-0 left-0 p-2">
@@ -212,21 +209,21 @@ const AarnaSalon = () => {
                     <div className="container mx-auto px-4">
                         <h2 className="text-2xl lg:text-4xl font-bold text-center mb-6" data-aos="fade-up">Why We're Different</h2>
                         <p className="text-sm lg:text-xl text-gray-400 text-center mb-16 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                            Discover how Aarna Salon offers unparalleled beauty services and value.
+                            Discover how Annie Salon offers unparalleled beauty services and value.
                         </p>
 
                         {comparisonData.map((section, index) => (
                             <div key={index} className="max-w-7xl mx-auto mb-16">
                                 <h3 className="text-3xl font-bold mb-8 text-center text-red-500" data-aos="fade-up">{section.category}</h3>
                                 <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                                    {/* Aarna Salon Column */}
+                                    {/* Annie Salon Column */}
                                     <div className="bg-gray-900 rounded-lg p-8" data-aos="fade-right" data-aos-delay="200">
                                         <div className="text-xl font-bold mb-6 flex items-center gap-3">
-                                            <span className="text-red-500">Aarna Salon</span>
+                                            <span className="text-red-500">Annie Salon</span>
                                             <div className="h-1 flex-grow bg-red-500/20 rounded"></div>
                                         </div>
                                         <div className="space-y-4">
-                                            {section.aarna.map((feature, idx) => (
+                                            {section.AnnieSalon.map((feature, idx) => (
                                                 <div key={idx} className="flex items-center gap-3" data-aos="fade-up" data-aos-delay={300 + (idx * 100)}>
                                                     <Check className="text-green-500 w-4 h-4 lg:h-5 lg:w-5 flex-shrink-0" />
                                                     <span className="text-gray-300">{feature}</span>
@@ -260,7 +257,7 @@ const AarnaSalon = () => {
                 <div className="bg-black pb-8 ">
                     <div className="container mx-auto px-4 text-center">
                         <h2 className="text-2xl lg:text-4xl font-bold mb-2" data-aos="fade-up">Ready to Look Your Best?</h2>
-                        <p className="text-sm lg:text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200">Join Aarna Salon today and transform your beauty!</p>
+                        <p className="text-sm lg:text-xl text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200">Join Annie Salon today and transform your beauty!</p>
                         <button
                             onClick={() => setshowUserForm(true)}
                             className="bg-red-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-600 transition-colors duration-300"
@@ -270,12 +267,9 @@ const AarnaSalon = () => {
                     </div>
                 </div>
             </div>
-            {showUserForm && (
-                <div className='text-black'>
-                    <MembershipFormPage onClose={() => setshowUserForm(false)} />
-                </div>)}
+            {showUserForm && <RegistrationForm onClose={() => setshowUserForm(false)} />}
         </>
     );
 };
 
-export default AarnaSalon;
+export default AnnieSalon;

@@ -1,3 +1,4 @@
+
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import  toast  from "react-hot-toast";
 import supabase from "../SupaBaseClient";
@@ -10,7 +11,7 @@ export const RegisterWithOtp = createAsyncThunk(
         const phone = `91${phoneNumber}`
         console.log(phone);
         
-        const { data, error } = await supabase.auth.signInWithOtp( {phone_number} );
+        const { data, error } = await supabase.auth.signInWithOtp( {phone} );
         if (error) throw error;
         toast.success(`OTP Sent on +91 ${phoneNumber}`)
         return data;

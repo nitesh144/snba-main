@@ -44,12 +44,12 @@ const RefundPolicy = () => {
 
             <h1 className="text-2xl lg:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">
-                Refund & Return Policy – Aarna Groups
+                Refund & Return Policy – Annie Consumers
               </span>
             </h1>
 
             <p className="text-sm lg:text-lg text-gray-300 text-justify">
-              At Aarna Groups, we prioritize your satisfaction. Our goal is to provide you with high-quality products and a smooth shopping experience. If for any reason you’re not completely happy with your purchase, our clear and customer-friendly refund and return policy ensures that your concerns are addressed quickly and efficiently.
+              At Annie Consumers, we prioritize your satisfaction. Our goal is to provide you with high-quality products and a smooth shopping experience. If for any reason you’re not completely happy with your purchase, our clear and customer-friendly refund and return policy ensures that your concerns are addressed quickly and efficiently.
               We believe in building trust through transparency, and our team is always ready to support you at every step. Whether it's a damaged item or a mismatch in your order, we’re here to make it right — promptly and professionally.
             </p>
           </div>
@@ -101,7 +101,7 @@ const RefundPolicy = () => {
         <ul className="space-y-2 text-gray-200">
           <li className="flex items-start text-sm lg:text-lg">
             <ArrowDown className="h-5 w-5 text-yellow-400 mr-2 mt-0.5 flex-shrink-0" />
-            <span>Claims made <span className="font-bold">after the same day</span> may be reviewed but are <span className="font-bold">subject to approval</span> by Aarna Groups' customer care team.</span>
+            <span>Claims made <span className="font-bold">after the same day</span> may be reviewed but are <span className="font-bold">subject to approval</span> by Annie Consumers' customer care team.</span>
           </li>
           <li className="flex items-start text-sm lg:text-lg">
             <ArrowDown className="h-5 w-5 text-yellow-400 mr-2 mt-0.5 flex-shrink-0" />
@@ -181,7 +181,7 @@ const RefundPolicy = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className=" text-sm lg:text-lg flex rounded-md gap-2">
                   <p className="font-semibold">Email:</p>
-                  <p className="text-red-500">info@snbaconsumers.com</p>
+                  <p className="text-red-500">info@annieconsumers.com</p>
                 </div>
                 <div className=" rounded-md text-sm lg:text-lg flex gap-2">
                   <p className="font-semibold">Phone</p>

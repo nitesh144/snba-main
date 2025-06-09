@@ -1,257 +1,62 @@
-// import React, { useState } from 'react';
-// import { Camera, User, X, Phone, Mail, MapPin, Home, Hash } from "lucide-react";
 
-// // RegistrationForm Component
-// const RegistrationForm = ({ onClose = () => {} }) => {
-//   // State variables to store form input values
-//   const [fullName, setFullName] = useState('');
-//   const [mobile, setMobile] = useState('');
-//   const [email, setEmail] = useState('');
-//   const [address, setAddress] = useState('');
-//   const [city, setCity] = useState('');
-//   const [state, setState] = useState('');
-//   const [postcode, setPostcode] = useState('');
-//   const [photo, setPhoto] = useState(null); // Actual image file
-//   const [photoPreview, setPhotoPreview] = useState(null); // Preview image URL
-
-//   // This function is called when user selects a photo
-//   const handlePhotoChange = (e) => {
-//     const file = e.target.files[0]; // Get the selected file
-//     if (file) {
-//       setPhoto(file); // Store the file
-
-//       // Create a preview to show image in the form
-//       const reader = new FileReader();
-//       reader.onload = (e) => {
-//         setPhotoPreview(e.target.result); // Show image preview
-//       };
-//       reader.readAsDataURL(file); // Convert file to base64 URL
-//     }
-//   };
-
-//   // This function handles form submission
-//   const handleSubmit = () => {
-//     // Validate required fields
-//     if (!fullName || !mobile || !email || !address || !city || !state || !postcode) {
-//       alert('Please fill all required fields');
-//       return;
-//     }
-
-//     // Create an object containing all the data
-//     const formData = {
-//       fullName,
-//       mobile,
-//       email,
-//       address,
-//       city,
-//       state,
-//       postcode,
-//       photo
-//     };
-
-//     console.log('Form Data:', formData);
-//     alert('Registration successful!');
-
-//     // Clear the form fields after submission
-//     setFullName('');
-//     setMobile('');
-//     setEmail('');
-//     setAddress('');
-//     setCity('');
-//     setState('');
-//     setPostcode('');
-//     setPhoto(null);
-//     setPhotoPreview(null);
-
-//     onClose(); // Close the form popup
-//   };
-
-//   return (
-//     <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 p-4">
-//       <div className="bg-gray-100 rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-auto">
-
-//         {/* Close Button */}
-//         <div className="sticky top-0 bg-gray-100 p-4 rounded-t-2xl">
-//           <button 
-//             onClick={onClose}
-//             className="absolute top-4 right-4 bg-red-600 text-white rounded-full p-2 hover:bg-red-700"
-//           >
-//             <X className="w-4 h-4" />
-//           </button>
-//         </div>
-
-//         {/* Header */}
-//         <div className="text-center px-6 pb-6">
-//           <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-//             <User className="w-8 h-8 text-white" />
-//           </div>
-//           <h1 className="text-2xl font-bold text-gray-800 mb-2">User Registration</h1>
-//           <p className="text-gray-600">Fill out the form below to register</p>
-//         </div>
-
-//         {/* Registration Form */}
-//         <div className="bg-white mx-6 mb-6 p-6 rounded-xl shadow-lg space-y-4">
-
-//           {/* Full Name Field */}
-//           <InputField 
-//             label="Full Name *" 
-//             value={fullName}
-//             onChange={setFullName}
-//             placeholder="Enter your full name"
-//             Icon={User}
-//           />
-
-//           {/* Mobile Number Field */}
-//           <InputField 
-//             label="Mobile Number *"
-//             value={mobile}
-//             onChange={setMobile}
-//             placeholder="1234567890"
-//             Icon={Phone}
-//           />
-
-//           {/* Email Field */}
-//           <InputField 
-//             label="Email Address *"
-//             value={email}
-//             onChange={setEmail}
-//             placeholder="xyz@gmail.com"
-//             Icon={Mail}
-//             type="email"
-//           />
-
-//           {/* Address Field (Textarea) */}
-//           <div>
-//             <label className="block text-sm font-bold text-gray-700 mb-2">Address *</label>
-//             <div className="relative">
-//               <Home className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-//               <textarea
-//                 value={address}
-//                 onChange={(e) => setAddress(e.target.value)}
-//                 placeholder="Enter your complete address"
-//                 rows="2"
-//                 className="w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-lg bg-gray-50 focus:bg-white focus:border-red-400 focus:outline-none resize-none"
-//               />
-//             </div>
-//           </div>
-
-//           {/* City and State (2-column grid) */}
-//           <div className="grid grid-cols-2 gap-4">
-//             <InputField 
-//               label="City *"
-//               value={city}
-//               onChange={setCity}
-//               placeholder="Your city"
-//               Icon={MapPin}
-//             />
-//             <InputField 
-//               label="State *"
-//               value={state}
-//               onChange={setState}
-//               placeholder="Your state"
-//               Icon={MapPin}
-//             />
-//           </div>
-
-//           {/* Postcode Field */}
-//           <InputField 
-//             label="Postcode *"
-//             value={postcode}
-//             onChange={setPostcode}
-//             placeholder="12345"
-//             Icon={Hash}
-//           />
-
-//           {/* Upload Profile Photo */}
-//           <div>
-//             <label className="block text-sm font-bold text-gray-700 mb-2">
-//               Profile Photo
-//             </label>
-//             <input
-//               type="file"
-//               accept="image/*"
-//               onChange={handlePhotoChange}
-//               className="hidden"
-//               id="photo-upload"
-//             />
-//             <label
-//               htmlFor="photo-upload"
-//               className="flex items-center justify-center w-full py-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-red-400 bg-gray-50"
-//             >
-//               {photoPreview ? (
-//                 <div className="text-center space-y-2">
-//                   <img 
-//                     src={photoPreview} 
-//                     alt="Preview" 
-//                     className="w-16 h-16 rounded-full mx-auto object-cover"
-//                   />
-//                   <p className="text-sm text-gray-600">Click to change photo</p>
-//                 </div>
-//               ) : (
-//                 <div className="text-center space-y-2">
-//                   <Camera className="w-8 h-8 text-gray-400 mx-auto" />
-//                   <p className="text-sm text-gray-600">Upload Photo</p>
-//                 </div>
-//               )}
-//             </label>
-//           </div>
-
-//           {/* Submit Button */}
-//           <div className="pt-4 border-t border-gray-200">
-//             <button 
-//               onClick={handleSubmit}
-//               className="w-full py-3 bg-red-500 text-white font-bold rounded-lg hover:bg-red-600 transition-colors"
-//             >
-//               Register User
-//             </button>
-//             <p className="text-xs text-gray-500 mt-3 text-center">
-//               * By registering, you agree to our Terms of Service and Privacy Policy
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// // Reusable input field component
-// const InputField = ({ label, value, onChange, placeholder, Icon, type = "text" }) => (
-//   <div>
-//     <label className="block text-sm font-bold text-gray-700 mb-2">{label}</label>
-//     <div className="relative">
-//       <Icon className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-//       <input
-//         type={type}
-//         value={value}
-//         onChange={(e) => onChange(e.target.value)}
-//         placeholder={placeholder}
-//         className="w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-lg bg-gray-50 focus:bg-white focus:border-red-400 focus:outline-none"
-//       />
-//     </div>
-//   </div>
-// );
-
-// export default RegistrationForm;
-
-import { Camera, User, X } from 'lucide-react'
-import React, { useState } from 'react'
+import { Camera, User, X, Phone, Mail, MapPin, CheckCircle, Clock } from 'lucide-react'
+import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  RegisterWithOtp,
-  VerifyOtp,
+    RegisterWithOtp,
+    VerifyOtp,
 } from "../../redux/authSlice";
 import { checkExistingUser } from '../../redux/registrationApi';
+import { userRegister } from '../../redux/registrationFormSlice';
 
 const RegistrationForm = ({ onClose }) => {
- const dispatch =useDispatch()
+    
+    const dispatch = useDispatch()
+    const { otpSent, otpVerified } = useSelector((state) => state.auth); // Your actual useSelector
 
-  const { otpSent, otpVerified } = useSelector((state) => state.auth);
-   const [phone, setPhone] = useState("");
-  const [otp, setOtp] = useState("");
+    const [phone, setPhone] = useState("");
+    const [otp, setOtp] = useState("");
     const [fileName, setFileName] = useState('')
     const [errors, setErrors] = useState({});
-   
+
+    // handleVerifyOtp function
+    const handleVerifyOtp = async () => {
+        console.log(phone);
+        const result = await dispatch(
+            VerifyOtp({ phoneNumber: phone, token: otp })
+        );
+        if (VerifyOtp.rejected.match(result)) {
+            // ❌ OTP failed (wrong or expired)
+            toast.error(`OTP verification failed: ${result.payload}`);
+        } else {
+            // ✅ OTP verified successfully
+            toast.success("OTP verified successfully!");
+        }
+    };
+
+    // Your original handleSendOtp function
+    const handleSendOtp = async () => {
+        const rawPhone = phone.trim();
+
+        if (rawPhone.length !== 10 || !/^\d{10}$/.test(rawPhone)) {
+            toast.error("Phone Number should be 10 digits");
+            return;
+        }
+
+        // Your existing user check and OTP dispatch logic
+        const existing = await checkExistingUser(rawPhone);
+        if (existing && existing.length > 0) {
+            console.log("User already exists:", existing);
+            toast.error("User Already Exists");
+            return;
+        }
+
+        // Proceed with OTP dispatch if no existing user
+        await dispatch(RegisterWithOtp(rawPhone));
+        console.log("New user — continue with registration");
+    };
+
     const [formData, setFormData] = useState({
         fullName: '',
         phone: '',
@@ -263,44 +68,52 @@ const RegistrationForm = ({ onClose }) => {
         photo: null
     });
 
-    // otp send
-    const handleVerifyOtp = async () => {
-    console.log(phone);
-    setSection(sellerDetails.segment);
-    const result = await dispatch(
-      VerifyOtp({ phoneNumber: phone, token: otp })
-    );
-    if (VerifyOtp.rejected.match(result)) {
-      // ❌ OTP failed (wrong or expired)
-      alert(`OTP verification failed: ${result.payload}`);
-    } else {
-      // ✅ OTP verified successfully
-      alert("OTP verified successfully!");
-    }
-  };
-
- const handleSendOtp = async () => {
-    const phone_no = phone.slice(-10);
-
-    if (phone.length !== 10) {
-      alert("Phone Number should be 10 digits");
-      return;
+    // Your original form validation
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        })
     }
 
-    const existing = await checkExistingUser(phone_no);
-    if (existing && existing.length > 0) {
-      console.log("Employee already exists:", existing);
-      alert("Employee Already Exist");
-      toast.warn("Employee Already Exist");
-    } else {
-      await dispatch(RegisterWithOtp(phone_no));
-      console.log("New employee — continue with registration");
-    }
-  };
-    //otp verify
-   
+    const handleFileChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            setFileName(file.name);
+            setFormData((prev) => ({ ...prev, photo: file }));
+        }
+    };
 
-    // form validation
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const newErrors = ValidateForm();
+
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+            toast.error('Please fill all the details!');
+            return;
+        }
+
+        // Your original Redux dispatch
+        dispatch(userRegister(formData))
+        // console.log('Form submitted:', formData);
+        toast.success('Registration successful!');
+        onClose();
+
+        setFormData({
+            fullName: '',
+            phone: '',
+            email: '',
+            address: '',
+            city: '',
+            state: '',
+            pinCode: '',
+            photo: null
+        });
+        setFileName('');
+    }
+
     const ValidateForm = () => {
         const newErrors = {};
 
@@ -338,251 +151,362 @@ const RegistrationForm = ({ onClose }) => {
 
         return newErrors;
     }
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value
-        })
-    }
 
-    const handleFileChange = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            setFileName(file.name)
-        }
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Here you can handle form submission, e.g., send data to server
-        const newErrors = ValidateForm();
-
-        if (Object.keys(newErrors).length > 0) {
-            setErrors(newErrors);
-            toast.error('Please fil all the details!');
-            return;
-        }
-        console.log('Form submitted:', formData);
-        // validation
-        toast.success('Registration successful!');
-        onClose();
-
-         useEffect(() => {
-    setFormData((prev) => ({ ...prev, phone: phone }));
-  }, [phone]);
-
-        setFormData({
-            fullName: '',
-            phone: '',
-            email: '',
-            address: '',
-            city: '',
-            state: '',
-            pinCode: '',
-            photo: null
-        });
-        setFileName('');
-    }
+    useEffect(() => {
+        setFormData((prev) => ({ ...prev, phone: phone }));
+    }, [phone]);
 
     return (
-        <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 overflow-hidden'>
-            {/* main */}
-            <div className='bg-gray-200 rounded-lg overflow-auto p-4 max-h-[90%] w-full lg:w-1/2 m-3 hide-scrollbar'>
-                {/* close button */}
-                <div className='relative mb-4'>
-                    <button className='absolute top-0 right-0 bg-red-600 rounded-full p-1 hover:bg-red-800 transition-colors duration-200 '
-                        onClick={onClose} aria-label='Close Registration Form'>
+        <div className='fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm z-50 p-4'>
+            {/* Enhanced Modal Container */}
+            <div className='bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden w-full max-w-lg max-h-[95vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300'>
+                
+                {/* Modern Header with Gradient */}
+                <div className='bg-gradient-to-br from-red-500 via-red-600 to-red-700 p-8 relative overflow-hidden'>
+                    {/* Background Pattern */}
+                    <div className='absolute inset-0 opacity-10'>
+                        <div className='absolute top-0 left-0 w-32 h-32 bg-white rounded-full -translate-x-16 -translate-y-16'></div>
+                        <div className='absolute bottom-0 right-0 w-24 h-24 bg-white rounded-full translate-x-12 translate-y-12'></div>
+                    </div>
+                    
+                    {/* Close Button */}
+                    <button 
+                        className='absolute top-4 right-4 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2.5 transition-all duration-200 hover:scale-105'
+                        onClick={onClose} 
+                        aria-label='Close Registration Form'
+                    >
                         <X className='h-5 w-5 text-white' />
                     </button>
-                </div>
-                {/* header */}
-                <div className='text-center'>
-                    <div className='h-16 w-16 bg-red-600 rounded-full flex items-center justify-center mx-auto'>
-
-                        <User className='h-8 w-8 mx-auto text-white' />
-                    </div>
-                    <h1 className='text-2xl font-bold mt-5'>User Registration Form</h1>
-                    <p className='text-sm mt-3'>Fill out the form below to register</p>
-                </div>
-
-                {/* form */}
-                <form action="">
-
-                    {/* before otp verification */}
-                    <div className='flex'>
-                        <div className='flex flex-col space-y-4 mb-6'>
-                            <div>
-                                <label className='block font-semibold ml-2'>Mobile Number</label>
-                                <input
-                                    type="number"
-                                    value={phone}
-                                    onChange={(e) => setPhone(e.target.value)}
-                                    placeholder='Enter mobile number'
-                                    className='bg-gray-50 p-2 rounded-xl mb-2' />
-                            </div>
-                            <button
-                                type='button'
-                                onClick={handleSendOtp}
-                                className='text-white font-semibold bg-green-600 px-4 py-2 rounded-xl'
-                            >
-                                Send OTP
-                            </button>
+                    
+                    {/* Header Content */}
+                    <div className='relative text-center text-white'>
+                        <div className='h-20 w-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg'>
+                            <User className='h-10 w-10' />
                         </div>
-                        {/* OTP verification */}
+                        <h1 className='text-3xl font-bold mb-2'>Create Account</h1>
+                        <p className='text-white/90 text-lg'>Join us today and get started</p>
+                    </div>
+                </div>
+
+                {/* Form Content */}
+                <div className='p-8'>
+                    {/* OTP Section - Enhanced Design */}
+                    <div className='space-y-6 mb-8'>
+                        {/* Phone Input Section */}
+                        <div className='bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100'>
+                            <div className='flex items-center mb-4'>
+                                <Phone className='h-5 w-5 text-blue-600 mr-2' />
+                                <h3 className='font-semibold text-gray-800'>Phone Verification</h3>
+                                {otpSent && <CheckCircle className='h-5 w-5 text-green-500 ml-auto' />}
+                            </div>
+                            
+                            <div className='flex flex-col sm:flex-row gap-4'>
+                                <div className='flex-1'>
+                                    <label className='block text-sm font-medium text-gray-700 mb-2'>Mobile Number</label>
+                                    <input
+                                        type="number"
+                                        value={phone}
+                                        onChange={(e) => setPhone(e.target.value)}
+                                        placeholder='Enter mobile number'
+                                        className='w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200'
+                                    />
+                                </div>
+                                <div className='flex items-end'>
+                                    <button
+                                        type='button'
+                                        onClick={handleSendOtp}
+                                        className='bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5'
+                                    >
+                                        Send OTP
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* OTP Input Section */}
                         {otpSent && (
-                            <div className='flex flex-col'>
-                                <label className='block font-semibold'>OTP Verification</label>
-                                <input type="number"
-                                    value={otp}
-                                    onChange={(e) => setOtp(e.target.value)}
-                                    className='bg-gray-50 p-2 rounded-xl mb-2'
-                                    placeholder='Enter OTP' />
-                                <button
-                                    type='button'
-                                    onClick={handleVerifyOtp}
-                                    className='text-white font-semibold bg-green-600 px-4 py-2 rounded-xl'>Verify OTP</button>
+                            <div className='bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-6 border border-amber-100 animate-fadeIn'>
+                                <div className='flex items-center mb-4'>
+                                    <Clock className='h-5 w-5 text-amber-600 mr-2' />
+                                    <h3 className='font-semibold text-gray-800'>Enter Verification Code</h3>
+                                </div>
+                                
+                                <div className='flex flex-col sm:flex-row gap-4'>
+                                    <div className='flex-1'>
+                                        <label className='block text-sm font-medium text-gray-700 mb-2'>6-Digit OTP</label>
+                                        <input 
+                                            type="number"
+                                            value={otp}
+                                            onChange={(e) => setOtp(e.target.value)}
+                                            className='w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-center text-lg tracking-wider focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-200'
+                                            placeholder='000000'
+                                        />
+                                    </div>
+                                    <div className='flex items-end'>
+                                        <button
+                                            type='button'
+                                            onClick={handleVerifyOtp}
+                                            className='bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5'
+                                        >
+                                            Verify OTP
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         )}
                     </div>
 
-                    {/* after otp verification, user will be redirected to this form */}
+                    {/* Main Registration Form */}
                     {otpVerified && (
-                        <div className='mt-6 space-y-4'>
-                            <div>
-                                <label className='block font-semibold ml-2 text-gray-700'>Full Name</label>
-                                <input required
-                                    type="text"
-                                    name='fullName'
-                                    value={formData.fullName}
-                                    onChange={handleInputChange}
-                                    className='p-2 rounded-xl bg-gray-50 w-full '
-                                    placeholder='Enter your name' />
-                                {
-                                    errors.fullName && (
-                                        <p className='text-red-500 text-xs'>{errors.fullName}</p>
-                                    )}
+                        <div className='space-y-6 animate-fadeIn'>
+                            {/* Success Message */}
+                            <div className='bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-xl p-4 flex items-center'>
+                                <CheckCircle className='h-5 w-5 text-green-600 mr-3' />
+                                <span className='text-green-800 font-medium'>Phone verified successfully! Complete your profile below.</span>
                             </div>
 
-                            <div>
-                                <label className='block font-semibold ml-2'>Mobile Number</label>
-                                <input required
-                                    type="number"
-                                    name='phonr'
-                                    value={formData.phone}
-                                    onChange={handleInputChange}
-                                    className='p-2 rounded-xl bg-gray-50 w-full'
-                                    placeholder='Ex. 1234567890' />
-                                {errors.phone && (
-                                    <p className='text-red-500 text-xs'>{errors.phone}</p>
-                                )}
-                            </div>
+                            {/* Personal Information */}
+                            <div className='bg-gray-50 rounded-xl p-6 space-y-4'>
+                                <h3 className='font-semibold text-gray-800 text-lg mb-4 flex items-center'>
+                                    <User className='h-5 w-5 mr-2 text-gray-600' />
+                                    Personal Information
+                                </h3>
 
-                            <div>
-                                <label className='block font-semibold ml-2'>Email</label>
-                                <input required
-                                    type="email"
-                                    name='email'
-                                    value={formData.email}
-                                    onChange={handleInputChange}
-                                    className='p-2 rounded-xl bg-gray-50 w-full'
-                                    placeholder='xyz@gmail.com' />
-                                {errors.email && (
-                                    <p className='text-red-500 text-xs'>{errors.email}</p>
-                                )}
-                            </div>
-
-                            <div>
-                                <label className='block font-semibold ml-2'>Address</label>
-                                <textarea required
-                                    name='address'
-                                    value={formData.address}
-                                    onChange={handleInputChange}
-                                    className='p-2 rounded-xl bg-gray-50 w-full'
-                                    placeholder='Enter your complete address'
-                                    rows="4"></textarea>
-                                {errors.address && (
-                                    <p className='text-red-500 text-xs'>{errors.address}</p>
-                                )}
-                            </div>
-
-                            <div className='grid grid-cols-2 gap-3'>
+                                {/* Full Name */}
                                 <div>
-                                    <label className='block font-semibold ml-2'>City</label>
-                                    <input required
+                                    <label className='block text-sm font-medium text-gray-700 mb-2'>Full Name</label>
+                                    <input
                                         type="text"
-                                        name='city'
-                                        value={formData.city}
+                                        name='fullName'
+                                        value={formData.fullName}
                                         onChange={handleInputChange}
-                                        className='p-2 rounded-xl bg-gray-50 w-full'
-                                        placeholder='Enter city' />
-                                    {errors.city && (
-                                        <p className='text-red-500 text-xs'>{errors.city}</p>
+                                        className={`w-full px-4 py-3 bg-white border rounded-xl transition-all duration-200 focus:ring-2 focus:ring-red-500 focus:border-red-500 ${
+                                            errors.fullName ? 'border-red-300 bg-red-50' : 'border-gray-200'
+                                        }`}
+                                        placeholder='Enter your full name'
+                                    />
+                                    {errors.fullName && (
+                                        <p className='text-red-500 text-sm mt-1 flex items-center'>
+                                            <span className='w-1 h-1 bg-red-500 rounded-full mr-2'></span>
+                                            {errors.fullName}
+                                        </p>
                                     )}
                                 </div>
+
+                                {/* Mobile Number (Pre-filled) */}
                                 <div>
-                                    <label className='block font-semibold ml-2'>Pin Code</label>
-                                    <input required
+                                    <label className='block text-sm font-medium text-gray-700 mb-2'>Mobile Number</label>
+                                    <input
                                         type="number"
-                                        name='pinCode'
-                                        value={formData.pinCode}
+                                        name='phone'
+                                        value={formData.phone}
                                         onChange={handleInputChange}
-                                        className='p-2 rounded-xl bg-gray-50 w-full'
-                                        placeholder='Ex. 123456' />
-                                    {errors.pinCode && (
-                                        <p className='text-red-500 text-xs'>{errors.pinCode}</p>
+                                        className={`w-full px-4 py-3 bg-gray-100 border rounded-xl transition-all duration-200 ${
+                                            errors.phone ? 'border-red-300' : 'border-gray-200'
+                                        }`}
+                                        placeholder='1234567890'
+                                        readOnly
+                                    />
+                                    {errors.phone && (
+                                        <p className='text-red-500 text-sm mt-1 flex items-center'>
+                                            <span className='w-1 h-1 bg-red-500 rounded-full mr-2'></span>
+                                            {errors.phone}
+                                        </p>
                                     )}
                                 </div>
 
+                                {/* Email */}
+                                <div>
+                                    <label className='block text-sm font-medium text-gray-700 mb-2 flex items-center'>
+                                        <Mail className='h-4 w-4 mr-1' />
+                                        Email Address
+                                    </label>
+                                    <input
+                                        type="email"
+                                        name='email'
+                                        value={formData.email}
+                                        onChange={handleInputChange}
+                                        className={`w-full px-4 py-3 bg-white border rounded-xl transition-all duration-200 focus:ring-2 focus:ring-red-500 focus:border-red-500 ${
+                                            errors.email ? 'border-red-300 bg-red-50' : 'border-gray-200'
+                                        }`}
+                                        placeholder='your@email.com'
+                                    />
+                                    {errors.email && (
+                                        <p className='text-red-500 text-sm mt-1 flex items-center'>
+                                            <span className='w-1 h-1 bg-red-500 rounded-full mr-2'></span>
+                                            {errors.email}
+                                        </p>
+                                    )}
+                                </div>
                             </div>
 
-                            <div>
-                                <label className='block font-semibold ml-2'>State</label>
-                                <input required
-                                    type="text"
-                                    name='state'
-                                    value={formData.state}
-                                    onChange={handleInputChange}
-                                    className='p-2 rounded-xl bg-gray-50 w-full'
-                                    placeholder='Your state' />
-                                {errors.state && (
-                                    <p className='text-red-500 text-xs'>{errors.state}</p>
-                                )}
+                            {/* Address Information */}
+                            <div className='bg-gray-50 rounded-xl p-6 space-y-4'>
+                                <h3 className='font-semibold text-gray-800 text-lg mb-4 flex items-center'>
+                                    <MapPin className='h-5 w-5 mr-2 text-gray-600' />
+                                    Address Details
+                                </h3>
+
+                                {/* Address */}
+                                <div>
+                                    <label className='block text-sm font-medium text-gray-700 mb-2'>Complete Address</label>
+                                    <textarea
+                                        name='address'
+                                        value={formData.address}
+                                        onChange={handleInputChange}
+                                        className={`w-full px-4 py-3 bg-white border rounded-xl transition-all duration-200 focus:ring-2 focus:ring-red-500 focus:border-red-500 resize-none ${
+                                            errors.address ? 'border-red-300 bg-red-50' : 'border-gray-200'
+                                        }`}
+                                        placeholder='Enter your complete address'
+                                        rows="3"
+                                    />
+                                    {errors.address && (
+                                        <p className='text-red-500 text-sm mt-1 flex items-center'>
+                                            <span className='w-1 h-1 bg-red-500 rounded-full mr-2'></span>
+                                            {errors.address}
+                                        </p>
+                                    )}
+                                </div>
+
+                                {/* City and Pin Code */}
+                                <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+                                    <div>
+                                        <label className='block text-sm font-medium text-gray-700 mb-2'>City</label>
+                                        <input
+                                            type="text"
+                                            name='city'
+                                            value={formData.city}
+                                            onChange={handleInputChange}
+                                            className={`w-full px-4 py-3 bg-white border rounded-xl transition-all duration-200 focus:ring-2 focus:ring-red-500 focus:border-red-500 ${
+                                                errors.city ? 'border-red-300 bg-red-50' : 'border-gray-200'
+                                            }`}
+                                            placeholder='Your city'
+                                        />
+                                        {errors.city && (
+                                            <p className='text-red-500 text-sm mt-1 flex items-center'>
+                                                <span className='w-1 h-1 bg-red-500 rounded-full mr-2'></span>
+                                                {errors.city}
+                                            </p>
+                                        )}
+                                    </div>
+                                    <div>
+                                        <label className='block text-sm font-medium text-gray-700 mb-2'>Pin Code</label>
+                                        <input
+                                            type="number"
+                                            name='pinCode'
+                                            value={formData.pinCode}
+                                            onChange={handleInputChange}
+                                            className={`w-full px-4 py-3 bg-white border rounded-xl transition-all duration-200 focus:ring-2 focus:ring-red-500 focus:border-red-500 ${
+                                                errors.pinCode ? 'border-red-300 bg-red-50' : 'border-gray-200'
+                                            }`}
+                                            placeholder='123456'
+                                        />
+                                        {errors.pinCode && (
+                                            <p className='text-red-500 text-sm mt-1 flex items-center'>
+                                                <span className='w-1 h-1 bg-red-500 rounded-full mr-2'></span>
+                                                {errors.pinCode}
+                                            </p>
+                                        )}
+                                    </div>
+                                </div>
+
+                                {/* State */}
+                                <div>
+                                    <label className='block text-sm font-medium text-gray-700 mb-2'>State</label>
+                                    <input
+                                        type="text"
+                                        name='state'
+                                        value={formData.state}
+                                        onChange={handleInputChange}
+                                        className={`w-full px-4 py-3 bg-white border rounded-xl transition-all duration-200 focus:ring-2 focus:ring-red-500 focus:border-red-500 ${
+                                            errors.state ? 'border-red-300 bg-red-50' : 'border-gray-200'
+                                        }`}
+                                        placeholder='Your state'
+                                    />
+                                    {errors.state && (
+                                        <p className='text-red-500 text-sm mt-1 flex items-center'>
+                                            <span className='w-1 h-1 bg-red-500 rounded-full mr-2'></span>
+                                            {errors.state}
+                                        </p>
+                                    )}
+                                </div>
                             </div>
 
-                            {/* photo upload */}
-                            <div>
-                                <label className='block font-semibold ml-2'>Profile Photo</label>
-                                <input required
+                            {/* Photo Upload */}
+                            <div className='bg-gray-50 rounded-xl p-6'>
+                                <h3 className='font-semibold text-gray-800 text-lg mb-4 flex items-center'>
+                                    <Camera className='h-5 w-5 mr-2 text-gray-600' />
+                                    Profile Photo
+                                </h3>
+                                
+                                <input
                                     type="file"
                                     accept='image/*'
                                     className='hidden'
                                     id='photo-upload'
-                                    onChange={handleFileChange} />
-                                {errors.photo && (
-                                    <p className='text-red-500 text-xs'>{errors.photo}</p>
-                                )}
-                                <label htmlFor='photo-upload' className='flex items-center justify-center w-full py-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-red-400 bg-gray-50'>
-                                    <div className='text-center space-y-2'>
-                                        <Camera className='h-8 w-8 text-gray-400 mx-auto' />
-                                        <p className='text-sm text-gray-600'>
-                                            {fileName ? fileName : 'Upload Photo'}
-                                        </p>
+                                    onChange={handleFileChange}
+                                />
+                                <label
+                                    htmlFor='photo-upload'
+                                    className='flex flex-col items-center justify-center w-full py-8 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-red-400 hover:bg-red-50 transition-all duration-200 bg-white'
+                                >
+                                    <div className='text-center space-y-3'>
+                                        <div className='h-16 w-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto'>
+                                            <Camera className='h-8 w-8 text-gray-400' />
+                                        </div>
+                                        <div>
+                                            <p className='text-lg font-medium text-gray-700'>
+                                                {fileName || 'Upload Profile Photo'}
+                                            </p>
+                                            <p className='text-sm text-gray-500 mt-1'>
+                                                PNG, JPG up to 5MB
+                                            </p>
+                                        </div>
                                     </div>
                                 </label>
                             </div>
-                            {/* submit button */}
-                            <div>
+
+                            {/* Submit Button */}
+                            <div className='pt-4'>
                                 <button
-                                    type='submit'
+                                    type='button'
                                     onClick={handleSubmit}
-                                    className='bg-red-600 w-full text-white py-2 rounded-lg font-semibold text-lg'>Register User</button>
-                                <p className='mt-2 text-sm'>
-                                    <span className='text-red-500'>*</span>By registering, you agree to aur Terms of Service and Privacy Policy</p>
+                                    className='w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold py-4 rounded-xl transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5 text-lg'
+                                >
+                                    Complete Registration
+                                </button>
+                                
+                                <p className='mt-4 text-sm text-gray-500 text-center leading-relaxed'>
+                                    <span className='text-red-500'>*</span>
+                                    By registering, you agree to our 
+                                    <span className='text-red-600 hover:text-red-700 cursor-pointer'> Terms of Service</span> and 
+                                    <span className='text-red-600 hover:text-red-700 cursor-pointer'> Privacy Policy</span>
+                                </p>
                             </div>
-                        </div>)}
-                </form>
+                        </div>
+                    )}
+                </div>
             </div>
+
+            <style jsx>{`
+                @keyframes fadeIn {
+                    from { opacity: 0; transform: translateY(10px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                .animate-fadeIn {
+                    animation: fadeIn 0.3s ease-out;
+                }
+                .scrollbar-thin {
+                    scrollbar-width: thin;
+                }
+                .scrollbar-thumb-gray-300::-webkit-scrollbar-thumb {
+                    background-color: #d1d5db;
+                    border-radius: 0.375rem;
+                }
+                .scrollbar-thin::-webkit-scrollbar {
+                    width: 6px;
+                }
+            `}</style>
         </div>
     )
 }

@@ -8,9 +8,22 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import MembershipFormPage from '../../pages/formpage/MembershipFormPage';
+import RegistrationForm from '../form/RegistrationForm';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const GymService = () => {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+      mirror: true,
+      offset: 120,
+      easing: 'ease-in-out'
+    });
+  }, []);
+
   const [hoveredCard, setHoveredCard] = useState(null);
   const [showUserForm, setShowUserForm] = useState(false);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -48,7 +61,7 @@ const GymService = () => {
     {
       icon: <Clock size={32} />,
       title: "Discount & Offers",
-      description: "Aarna Unisex Gym is offering a 75% discount on memberships—just ₹99 per month! Enjoy flexible plans that provide great value for our services.",
+      description: "Annie Unisex Gym is offering a 75% discount on memberships—just ₹99 per month! Enjoy flexible plans that provide great value for our services.",
       highlightColor: "from-red-700 to-red-800",
       iconBg: "bg-gradient-to-br from-red-700 to-red-800",
       delay: 0.4
@@ -67,7 +80,7 @@ const GymService = () => {
     {
       name: "Sarah Johnson",
       role: "Professional Athlete",
-      content: "Aarna Gym transformed my training regime. The facilities and expert guidance are unmatched.",
+      content: "Annie Gym transformed my training regime. The facilities and expert guidance are unmatched.",
       rating: 5
     },
     {
@@ -79,7 +92,7 @@ const GymService = () => {
     {
       name: "Lisa Parker",
       role: "Yoga Instructor",
-      content: "The atmosphere and community at Aarna Gym are incredible. It's more than just a gym.",
+      content: "The atmosphere and community at Annie Gym are incredible. It's more than just a gym.",
       rating: 5
     }
   ];
@@ -106,37 +119,34 @@ const GymService = () => {
       </div>
 
       {/* Header Section */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+      <div
+
         className="text-center mb-16 relative"
       >
-        <h1 className="text-2xl lg:text-5xl font-bold text-white ">
+        <h1 className="text-2xl lg:text-5xl font-bold text-white " data-aos="fade-up">
           <span className="text-white bg-clip-text">
-            AARNA GYM
+            ANNIE GYM
           </span>
         </h1>
-        <div className="w-40 h-1 bg-gradient-to-r from-red-500 to-red-700 mx-auto rounded-full lg:mt-2"></div>
-        <p className="text-gray-300 text-sm lg:text-xl max-w-3xl mt-6 mx-auto font-light">
+        <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-red-700 mx-auto rounded-full lg:mt-2"></div>
+        <p className="text-gray-300 text-sm lg:text-xl max-w-3xl mt-6 mx-auto font-light" data-aos="fade-right">
           Transform your life with premium fitness facilities, expert guidance, and a supportive community
         </p>
-      </motion.div>
+      </div>
 
       {/* Stats Section */}
       <div className="container mx-auto max-w-6xl mb-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              data-aos="fade-up-right"
+              data-aos-delay={200 + (index * 100)}
               className="text-center"
             >
               <h3 className="text-xl lg:text-3xl font-bold text-red-500 mb-2">{stat.value}</h3>
               <p className="text-gray-400">{stat.label}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -145,25 +155,22 @@ const GymService = () => {
       <div className="container mx-auto max-w-6xl relative mb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {features.map((feature, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: feature.delay }}
-              onHoverStart={() => setHoveredCard(index)}
-              onHoverEnd={() => setHoveredCard(null)}
+              data-aos="flip-left"
+              data-aos-delay={100 + (index * 100)}
               className="relative group"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-red-700 to-red-700 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform duration-300"></div>
               <div className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-800 backdrop-blur-sm hover:border-red-500/50 transition-all duration-300">
                 <div className={`${feature.iconBg} w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transform group-hover:rotate-6 transition-transform duration-300 shadow-lg`}>
-                  <motion.div
+                  <div
                     animate={{ rotate: hoveredCard === index ? 360 : 0 }}
                     transition={{ duration: 0.5 }}
                     className="text-white"
                   >
                     {feature.icon}
-                  </motion.div>
+                  </div>
                 </div>
 
                 <h2 className="text-lg lg:text-2xl font-bold text-white mb-4 group-hover:text-red-500 transition-colors duration-300">
@@ -173,7 +180,7 @@ const GymService = () => {
                   {feature.description}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -181,12 +188,9 @@ const GymService = () => {
       {/* Testimonials Section */}
       <div className="container mx-auto max-w-4xl mb-16">
         <AnimatePresence mode="wait">
-          <motion.div
+          <div
             key={activeTestimonial}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
+
             className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 text-center relative overflow-hidden"
           >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-red-700"></div>
@@ -198,37 +202,34 @@ const GymService = () => {
             <p className="text-gray-300 text-sm lg:text-lg mb-6 italic">"{testimonials[activeTestimonial].content}"</p>
             <p className="text-white font-semibold">{testimonials[activeTestimonial].name}</p>
             <p className="text-red-500">{testimonials[activeTestimonial].role}</p>
-          </motion.div>
+          </div>
         </AnimatePresence>
       </div>
 
       {/* CTA Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
+      <div
+
         className="text-center relative mt-16"
       >
-        <h3 className="text-xl lg:text-4xl font-bold text-white mb-6">
-        Start Your Fitness Journey Today!
+        <h3 className="text-xl lg:text-4xl font-bold text-white mb-6" data-aos="fade-left">
+          Start Your Fitness Journey Today!
         </h3>
-        <p className="text-gray-300 mb-8 max-w-2xl mx-auto text-sm">
-        Join now and get 75% off at Gym Services, plus a free personal training session
+        <p className="text-gray-300 mb-8 max-w-2xl mx-auto text-sm" data-aos="fade-right">
+          Join now and get 75% off at Gym Services, plus a free personal training session
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-red-500 to-red-700 text-white text-sm lg:text-lg font-bold py-2 px-2 lg:py-4 lg:px-8 rounded-full transition-all duration-300"
-              onClick={()=> navigate(setShowUserForm(true))}
-            >
-              Subscribe Now
-            </motion.button>
+
+          <button
+            data-aos="fade-up"
+            className="bg-gradient-to-r from-red-500 to-red-700 text-white text-sm lg:text-lg font-bold py-2 px-2 lg:py-4 lg:px-8 rounded-full transition-all duration-300"
+            onClick={() => navigate(setShowUserForm(true))}
+          >
+            Subscribe Now
+          </button>
         </div>
-      </motion.div>
+      </div>
       <div>
-        {showUserForm && <MembershipFormPage onClose={()=> setShowUserForm(false)} />}
+        {showUserForm && <RegistrationForm onClose={() => setShowUserForm(false)} />}
       </div>
     </div>
   );

@@ -103,12 +103,12 @@ const CareerPage = () => {
           <div className="flex flex-col md:flex-row items-center gap-1 lg:gap-8">
             {/* Text */}
             <div className=" space-y-6 mt-5 max-w-3xl mx-auto">
-              <h1 className="text-3xl font-bold text-white m-5">
-                We are <span className="text-red-500 text-4xl">Hiring</span>
+              <h1 className="text-3xl lg:text-5xl font-bold text-white m-5">
+                We are <span className="text-red-500 text-5xl">Hiring</span>
               </h1>
 
-              <h2 className="text-2xl font-bold text-white ">
-                Bring your talent to SNBA Consumers
+              <h2 className="text-2xl lg:text-3xl font-bold text-white ">
+                Bring your talent to Annie Consumers
                 <span className="text-red-500"> and make an impact!</span>
               </h2>
 
@@ -118,7 +118,7 @@ const CareerPage = () => {
               <div className="rounded-lg overflow-hidden ml-5 ">
                 <img
                   src={career}
-                  alt="SNBA Consumers"
+                  alt="Annie Consumers"
                   className=" h-[350px] lg:h-[400px] object-cover"
                 />
               </div>

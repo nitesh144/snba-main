@@ -28,9 +28,9 @@ const TermsOfService = () => {
     },
     overview: {
       title: "2. Services Overview",
-      content: `SNBA Consumers offers a variety of services under one roof, including:
+      content: `Annie Consumers offers a variety of services under one roof, including:
 
-      • Supermarket (Aarna Mart): A wide range of grocery and household products with exclusive discounts.
+      • Supermarket (Annie Mart): A wide range of grocery and household products with exclusive discounts.
       • Gym Services: State-of-the-art fitness facilities and professional guidance.
       • Salon Services: Beauty and wellness services designed to enhance your self-care routine.
       • Food Court: A dining experience offering a variety of food, restaurant, and sweet options.
@@ -39,7 +39,7 @@ const TermsOfService = () => {
     },
     membership: {
       title: "3. Membership (₹99 Plan)",
-      content: `SNBA Consumers offers a ₹99 Membership Plan that provides exclusive access to discounts and benefits across our supermarket, gym, salon, and food court services. By subscribing to this plan, you agree to the following:
+      content: `Annie Consumers offers a ₹99 Membership Plan that provides exclusive access to discounts and benefits across our supermarket, gym, salon, and food court services. By subscribing to this plan, you agree to the following:
 
       • Subscription Fee: A monthly fee of ₹99 will be charged to your account.
       • Auto-Renewal: Your membership will automatically renew each month unless cancelled.
@@ -52,14 +52,14 @@ const TermsOfService = () => {
 
       • Provide accurate and complete information when creating an account or making a purchase.
       • Use the Services only for lawful purposes and in accordance with these Terms.
-      • Not engage in any activity that may harm the reputation or operations of SNBA Consumers or its affiliates.
-      • Not attempt to gain unauthorized access to SNBA Consumers' systems, data, or networks.`
+      • Not engage in any activity that may harm the reputation or operations of Annie Consumers or its affiliates.
+      • Not attempt to gain unauthorized access to Annie Consumers' systems, data, or networks.`
     },
     ip: {
       title: "5. Intellectual Property",
-      content: `• All trademarks, logos, branding, and proprietary knowledge associated with SNBA Consumers are the sole property of SNBA Consumers.
-      • You may not use, copy, or modify any intellectual property without prior written consent from SNBA Consumers.
-      • Any unauthorized use of SNBA Consumers' intellectual property may result in legal action.`
+      content: `• All trademarks, logos, branding, and proprietary knowledge associated with Annie Consumers are the sole property of Annie Consumers.
+      • You may not use, copy, or modify any intellectual property without prior written consent from Annie Consumers.
+      • Any unauthorized use of Annie Consumers' intellectual property may result in legal action.`
     },
     privacy: {
       title: "6. Privacy Policy",
@@ -67,7 +67,7 @@ const TermsOfService = () => {
     },
     refund: {
       title: "7. Refund Policy",
-      content: `SNBA Consumers strives to provide the best possible products and services. Refunds are eligible under the following conditions:
+      content: `Annie Consumers strives to provide the best possible products and services. Refunds are eligible under the following conditions:
 
       Eligibility for Refunds:
       • Product or Service Defects: If you receive a defective or damaged product
@@ -75,7 +75,7 @@ const TermsOfService = () => {
       • Non-Delivery: If your product is not delivered within the stipulated time frame
 
       How to Request a Refund:
-      • Contact our customer support team at +91-9109222890
+      • Contact our customer support team at +91-7400866821
       • Provide your order number and details
       • Return items in original condition with proof of purchase
 
@@ -86,17 +86,17 @@ const TermsOfService = () => {
     },
     termination: {
       title: "8. Termination",
-      content: `• SNBA Consumers reserves the right to terminate or suspend your access to the Services at any time, with or without notice, for any reason, including but not limited to violations of these Terms.
-      • If your account is terminated, you must immediately cease using SNBA Consumers' Services.`
+      content: `• Annie Consumers reserves the right to terminate or suspend your access to the Services at any time, with or without notice, for any reason, including but not limited to violations of these Terms.
+      • If your account is terminated, you must immediately cease using Annie Consumers' Services.`
     },
     liability: {
       title: "9. Limitation of Liability",
-      content: `• SNBA Consumers shall not be liable for any indirect, incidental, special, or consequential damages arising out of or related to your use of the Services.
-      • SNBA Consumers' total liability to you for any claims arising out of these Terms or your use of the Services shall not exceed the amount you have paid to SNBA Consumers in the past six months.`
+      content: `• Annie Consumers shall not be liable for any indirect, incidental, special, or consequential damages arising out of or related to your use of the Services.
+      • Annie Consumers' total liability to you for any claims arising out of these Terms or your use of the Services shall not exceed the amount you have paid to Annie Consumers in the past six months.`
     },
     indemnification: {
       title: "10. Indemnification",
-      content: `You agree to reimburse and hold SNBA Consumers harmless from any claims, damages, losses, or expenses (including legal fees) arising out of your use of the Services or your violation of these Terms.`
+      content: `You agree to reimburse and hold Annie Consumers harmless from any claims, damages, losses, or expenses (including legal fees) arising out of your use of the Services or your violation of these Terms.`
     },
     disputes: {
       title: "11. Dispute Resolution",
@@ -109,16 +109,16 @@ const TermsOfService = () => {
     },
     changes: {
       title: "13. Changes to Terms",
-      content: `SNBA Consumers reserves the right to modify or update these Terms at any time. We will notify you of any changes by posting the updated Terms on our website. Your continued use of the Services after the changes take effect constitutes your acceptance of the revised Terms.`
+      content: `Annie Consumers reserves the right to modify or update these Terms at any time. We will notify you of any changes by posting the updated Terms on our website. Your continued use of the Services after the changes take effect constitutes your acceptance of the revised Terms.`
     },
     contact: {
       title: "14. Contact Us",
       content: `If you have any questions or concerns about these Terms, please contact us at:
 
-      SNBA Consumers
-      📞 +91 910 09 222 890
-      📧 info@snbaconsumers.com
-      🌐 www.snbaconsumers.com`
+      Annie Consumers
+      📞 +91 7400866821
+      📧 info@annieconsumers.com
+      🌐 www.annieconsumers.com`
     }
   };
 
@@ -161,7 +161,7 @@ const TermsOfService = () => {
             </h1>
 
             <p className="text-sm lg:text-xl mb-8 text-gray-300">
-              Welcome to SNBA Consumers. Please read these terms carefully before using our services.
+              Welcome to Annie Consumers. Please read these terms carefully before using our services.
             </p>
 
             {/* Key Points Cards */}

@@ -34,12 +34,12 @@ app.post('/api/send-email', async (req, res) => {
       Messages: [
         {
           From: {
-            Email: "no-replay@snbaconsumers.com", 
+            Email: "no-replay@annieconsumers.com", 
             Name: "Franchise Enquiry System"
           },
           To: [
             {
-              Email: "snbaconsumers@gmail.com", 
+              Email: "annieconsumers@gmail.com", 
               Name: "Franchise Team" 
             }
           ],

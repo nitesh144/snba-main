@@ -40,11 +40,7 @@ const Promotion = () => {
   const handleClose = () => {
     setIsClosing(true);
     setIsVisible(false);
-    
-    // Store timestamp to prevent showing again for 24 hours
-    // if (typeof localStorage !== 'undefined') {
-    //   localStorage.setItem(PROMO_KEY, Date.now().toString());
-    // }
+
     
     // Clean up component after animation
     setTimeout(() => {
@@ -52,16 +48,7 @@ const Promotion = () => {
     }, 400);
   };
 
-  // Auto-hide after 20 seconds for mobile (longer than desktop)
-  // useEffect(() => {
-  //   if (isVisible && !showUserForm) {
-  //     const autoHideTimer = setTimeout(() => {
-  //       handleClose();
-  //     }, 20000);
 
-  //     return () => clearTimeout(autoHideTimer);
-  //   }
-  // }, [isVisible, showUserForm]);
 
   // Prevent body scroll when form is open (mobile fix)
   useEffect(() => {
@@ -170,7 +157,7 @@ const Promotion = () => {
               id="promo-title" 
               className="text-md font-bold text-white text-center leading-tight mb-4"
             >
-              Experience The Aarna Difference
+              Redefining Quality — The Annie Way.
             </h3>
 
             <div id="promo-description" className="mb-2">

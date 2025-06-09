@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, Apple, Play, Star, Download } from 'lucide-react';
-import mobile from '../../assets/images/mobile/mobileimage.jpg'
+import mobile from '../../assets/images/mobile-app.png'
 
 const AppBanner = () => {
   return (
@@ -21,22 +21,13 @@ const AppBanner = () => {
                 life with
               </span>
               <span className='block text-red-500 mt-2 md:mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl'>
-                SNBA Consumers
+                Annie Consumers
               </span>
             </h2>
             
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/80 max-w-md mx-auto lg:mx-0">
               Download our app and unlock a world of wellness, beauty, and exclusive member benefits.
             </p>
-            {/* Rating Section */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2 sm:gap-4">
-              <div className="flex items-center">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-600 fill-yellow-600" />
-                ))}
-              </div>
-              <span className="text-white text-sm sm:text-base lg:text-lg">4.0/5 (1k+ Reviews)</span>
-            </div>
 
             {/* Download Buttons */}
             <div className="flex flex-row justify-center lg:justify-start gap-5">
@@ -66,25 +57,14 @@ const AppBanner = () => {
 
           {/* Phone Mockup Section */}
           <div className="relative mt-8 lg:mt-0 flex justify-center">
-            <div className="relative w-56 md:w-72 lg:w-80 h-[390px] md:h-[520px] lg:h-[580px] bg-black rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-6 sm:border-8 border-gray-900 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
+            <div className="relative w-56 md:w-72 lg:w-80 h-[450px] md:h-[520px] lg:h-[650px] bg-black rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-gray-900 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
               {/* Screen Content */}
-              <div className="absolute inset-2 bg-gradient-to-br from-red-700 via-red-600 to-red-500 rounded-[34px] sm:rounded-[42px] md:rounded-[48px] overflow-hidden">
+              <div className="absolute inset-2  rounded-[34px] sm:rounded-[42px] md:rounded-[48px] overflow-hidden">
                 <img
                   src={mobile}
                   alt="App Interface"
-                  className="w-full h-full object-cover opacity-90"
+                  className=" object-cover "
                 />
-              </div>
-
-              {/* Floating Download Stats */}
-              <div className="absolute -right-8 sm:-right-10 bottom-1/4 bg-red-500 backdrop-blur-lg p-2 sm:p-3 md:p-4 rounded-xl sm:rounded-2xl transform rotate-12 hover:rotate-0 transition-transform duration-300">
-                <div className="flex items-center space-x-2 sm:space-x-3">
-                  <Download className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white" />
-                  <div className="text-white">
-                    <p className="text-[10px] md:text-sm opacity-80 text-white">Downloads</p>
-                    <p className="text-xs sm:text-sm md:text-base lg:text-xl font-bold">1K+</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

@@ -2,8 +2,10 @@
 import { useState } from 'react';
 import { ArrowDown, Star, Utensils, ShoppingBag, Truck } from 'lucide-react';
 import foodbg from '../../assets/images/blog/food/food-bg.jpg'
+import RegistrationForm from '../../components/form/RegistrationForm';
 
-export default function AarnaFoodCourt() {
+export default function AnnieFoodCourt() {
+  const [showUserForm, setShowUserForm] = useState(false);
   return (
     <div className=" text-white min-h-screen font-sans overflow-hidden " style={{backgroundImage: `url(${foodbg})`}}>
       {/* Hero Section - Enhanced with more visual appeal */}
@@ -19,7 +21,7 @@ export default function AarnaFoodCourt() {
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-center text-white">
-              <span className="text-red-600">Aarna</span> Food Court
+              <span className="text-red-600">Annie</span> Food Court
             </h1>
             <p className="text-xl md:text-3xl mb-12 text-center max-w-3xl text-gray-200">Your Ultimate Dining Destination in Raipur</p>
             
@@ -35,7 +37,7 @@ export default function AarnaFoodCourt() {
             </div>
             
             <p className="text-lg md:text-xl text-center max-w-3xl text-gray-300">
-              Craving a meal that's as diverse as your taste buds? Welcome to <strong className="text-red-500">Aarna Food Court</strong>, where food lovers come together to indulge in a world of flavors all under one roof. Whether you're in the mood for the comforting spices of Indian cuisine, the crispy goodness of Chinese, the cheesy delights of Italian dishes, or the bold and zesty flavors of Mexican food, <strong className="text-red-500">Aarna Food Court</strong> has it all!
+              Craving a meal that's as diverse as your taste buds? Welcome to <strong className="text-red-500">Annie Food Court</strong>, where food lovers come together to indulge in a world of flavors all under one roof. Whether you're in the mood for the comforting spices of Indian cuisine, the crispy goodness of Chinese, the cheesy delights of Italian dishes, or the bold and zesty flavors of Mexican food, <strong className="text-red-500">Annie Food Court</strong> has it all!
             </p>
             
             {/* Scroll indicator */}
@@ -59,7 +61,7 @@ export default function AarnaFoodCourt() {
           <div className="w-24 h-1 bg-red-600 mx-auto mb-12"></div>
           
           <p className="text-lg mb-16 text-center max-w-4xl mx-auto text-gray-300">
-            At Aarna Food Court, we take pride in offering a diverse range of cuisines that cater to every taste. Whether you're in the mood for hearty <strong className="text-red-500">Indian</strong> spices, savory <strong className="text-red-500">Chinese</strong> dishes, comforting <strong className="text-red-500">Italian</strong> classics, or flavorful <strong className="text-red-500">Mexican</strong> meals, we've got something special for you. No matter what you're craving, our food is prepared fresh, made with quality ingredients, and served with love.
+            At Annie Food Court, we take pride in offering a diverse range of cuisines that cater to every taste. Whether you're in the mood for hearty <strong className="text-red-500">Indian</strong> spices, savory <strong className="text-red-500">Chinese</strong> dishes, comforting <strong className="text-red-500">Italian</strong> classics, or flavorful <strong className="text-red-500">Mexican</strong> meals, we've got something special for you. No matter what you're craving, our food is prepared fresh, made with quality ingredients, and served with love.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -114,7 +116,7 @@ export default function AarnaFoodCourt() {
           <div className="w-24 h-1 bg-red-600 mx-auto mb-12"></div>
           
           <p className="text-lg mb-16 text-center max-w-4xl mx-auto text-gray-300">
-            Whether you're dining with us, ordering in, or grabbing your meal on the go, Aarna Food Court makes sure you get your food exactly how you want it.
+            Whether you're dining with us, ordering in, or grabbing your meal on the go, Annie Food Court makes sure you get your food exactly how you want it.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
@@ -193,8 +195,10 @@ export default function AarnaFoodCourt() {
               
               <p className="text-gray-300 mb-8">Whether you're picking up a meal for yourself or feeding the entire family, take advantage of this limited-time offer and treat your taste buds to something extraordinary. Hurry, the offer is valid for a limited period only!</p>
               
-              <button className="bg-gradient-to-r from-red-700 to-red-600 hover:from-red-600 hover:to-red-500 text-white font-bold text-lg py-3 px-8 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <button onClick={() => setShowUserForm(true)} 
+              className="bg-gradient-to-r from-red-700 to-red-600 hover:from-red-600 hover:to-red-500 text-white font-bold text-lg py-3 px-8 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
                 Claim Offer Now
+
               </button>
             </div>
           </div>
@@ -245,7 +249,7 @@ export default function AarnaFoodCourt() {
             <div className="bg-gradient-to-r from-red-800 to-red-600 p-10 rounded-xl shadow-2xl text-center">
               <h2 className="text-2xl md:text-4xl font-bold mb-6">Visit Us Today!</h2>
               <p className="text-lg mb-8">
-                Aarna Food Court is conveniently located in <strong>Raipur</strong> -- the perfect place to enjoy a meal with your loved ones or satisfy those food cravings. Whether you're stopping by for a quick bite or planning to enjoy a leisurely meal, we promise you an experience you'll want to repeat!
+                Annie Food Court is conveniently located in <strong>Raipur</strong> -- the perfect place to enjoy a meal with your loved ones or satisfy those food cravings. Whether you're stopping by for a quick bite or planning to enjoy a leisurely meal, we promise you an experience you'll want to repeat!
               </p>
               
               <p className="text-xl font-medium mb-6">
@@ -253,7 +257,7 @@ export default function AarnaFoodCourt() {
               </p>
               
               <p className="mb-8">
-                Get ready to explore our diverse menu and enjoy amazing discounts on your favorite dishes. Head over to <strong>Aarna Food Court</strong> today, or place your order online and let us deliver deliciousness straight to you!
+                Get ready to explore our diverse menu and enjoy amazing discounts on your favorite dishes. Head over to <strong>Annie Food Court</strong> today, or place your order online and let us deliver deliciousness straight to you!
               </p>
               
               <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -277,14 +281,15 @@ export default function AarnaFoodCourt() {
               <span className="bg-red-700 text-white p-2 rounded-full">
                 <Utensils size={18} />
               </span>
-              <h2 className="ml-2 text-xl font-bold text-white">Aarna Food Court</h2>
+              <h2 className="ml-2 text-xl font-bold text-white">Annie Food Court</h2>
             </div>
             <p className="text-gray-500 text-sm text-center">
-              &copy; {new Date().getFullYear()} Aarna Food Court. All rights reserved.
+              &copy; {new Date().getFullYear()} Annie Food Court. All rights reserved.
             </p>
           </div>
         </div>
       </section>
+      {showUserForm && <RegistrationForm onClose={() => setShowUserForm(false)} />}
     </div>
   );
 }

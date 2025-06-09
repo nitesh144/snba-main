@@ -114,10 +114,10 @@ const FranchiseForm = ({ isOpen, onClose }) => {
                   required
                 >
                   <option value="">-- Select One --</option>
-                  <option value="Gym">Aarna Gym</option>
-                  <option value="Mart">Aarna Mart</option>
-                  <option value="Unisex Salon">Aarna Unisex Salon</option>
-                  <option value="Food Court">Aarna FoodCourt</option>
+                  <option value="Gym">Annie Gym</option>
+                  <option value="Mart">Annie Mart</option>
+                  <option value="Unisex Salon">Annie Unisex Salon</option>
+                  <option value="Food Court">Annie FoodCourt</option>
                   <option value="Select All">Select All</option>
                 </select>
               </div>

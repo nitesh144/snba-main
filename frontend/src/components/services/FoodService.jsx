@@ -6,9 +6,22 @@ import {
   ChefHat
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import MembershipFormPage from '../../pages/formpage/MembershipFormPage';
+import RegistrationForm from '../form/RegistrationForm';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const FoodService = () => {
+
+ useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+      mirror: true,
+      offset: 120,
+      easing: 'ease-in-out'
+    });
+  }, []);
+
   const [hoveredCard, setHoveredCard] = useState(null);
   const [showUserForm, setShowUserForm] = useState(false);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -37,7 +50,7 @@ const FoodService = () => {
     {
       icon: <Tag size={32} />,
       title: "Premium Value",
-      description: "Enjoy exceptional dining at unbeatable prices. Aarna Mart offers ₹99/month subscription gives you access to exclusive discounts and special member-only offerings.",
+      description: "Enjoy exceptional dining at unbeatable prices. Annie Mart offers ₹99/month subscription gives you access to exclusive discounts and special member-only offerings.",
       highlightColor: "from-orange-600 to-orange-700",
       iconBg: "bg-gradient-to-br from-red-600 to-red-700",
       delay: 0.2
@@ -45,7 +58,7 @@ const FoodService = () => {
     {
       icon: <Pizza size={32} />,
       title: "Global Cuisine",
-      description: "Travel the world through Aarna Mart's diverse menu featuring authentic dishes from various cultures. From Italian pasta to Indian curries, satisfy all your cravings.",
+      description: "Travel the world through Annie Mart's diverse menu featuring authentic dishes from various cultures. From Italian pasta to Indian curries, satisfy all your cravings.",
       highlightColor: "from-orange-700 to-orange-800",
       iconBg: "bg-gradient-to-br from-red-700 to-red-800",
       delay: 0.4
@@ -64,7 +77,7 @@ const FoodService = () => {
     {
       name: "David Chen",
       role: "Food Enthusiast",
-      content: "The variety and quality of food at Aarna FService is exceptional. The subscription makes it incredibly affordable!",
+      content: "The variety and quality of food at Annie FService is exceptional. The subscription makes it incredibly affordable!",
       rating: 5
     },
     {
@@ -82,7 +95,7 @@ const FoodService = () => {
   ];
 
   const stats = [
-    { label: "Satisfied Customers", value: "10,000+" },
+    { label: "Satisfied Customers", value: "1000+" },
     { label: "Global Cuisines", value: "15+" },
     { label: "Expert Chefs", value: "20+" },
     { label: "Signature Dishes", value: "100+" }
@@ -104,37 +117,36 @@ const FoodService = () => {
       </div>
 
       {/* Header Section */}
-      <motion.div
+      <div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="text-center mb-16 relative"
       >
         <h1 className="text-2xl lg:text-5xl font-bold text-white ">
-          <span className="bg-gradient-to-r from-red-500 to-red-700  bg-clip-text">
-            AARNA FOOD COURT
+          <span className="bg-gradient-to-r from-red-500 to-red-700  bg-clip-text" data-aos="fade-up">
+            ANNIE FOOD COURT
           </span>
         </h1>
         <div className="w-40 h-1 bg-gradient-to-r from-red-500 to-red-700 mx-auto mt-1 rounded-full lg:mt-2"></div>
-        <p className="text-gray-300 text-sm lg:text-xl max-w-3xl mt-6 mx-auto font-light">
+        <p className="text-gray-300 text-sm lg:text-xl max-w-3xl mt-6 mx-auto font-light" data-aos="fade-right" >
           Experience culinary excellence with our diverse selection of global cuisines and premium dining atmosphere
         </p>
-      </motion.div>
+      </div>
 
       {/* Stats Section */}
       <div className="container mx-auto max-w-6xl mb-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              data-aos="fade-up-right"
+                data-aos-delay={200 + (index * 100)}
               className="text-center"
             >
               <h3 className="text-xl lg:text-3xl font-bold text-red-500 mb-2">{stat.value}</h3>
               <p className="text-gray-400">{stat.label}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -143,25 +155,22 @@ const FoodService = () => {
       <div className="container mx-auto max-w-6xl relative mb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {features.map((feature, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: feature.delay }}
-              onHoverStart={() => setHoveredCard(index)}
-              onHoverEnd={() => setHoveredCard(null)}
+              data-aos="flip-left"
+                data-aos-delay={100 + (index * 100)}
               className="relative group"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-red-700 to-red-700 rounded-2xl transform rotate-1 group-hover:rotate-2 transition-transform duration-300"></div>
               <div className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-800 backdrop-blur-sm hover:border-red-500 transition-all duration-300">
                 <div className={`${feature.iconBg} w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transform group-hover:rotate-6 transition-transform duration-300 shadow-lg`}>
-                  <motion.div
+                  <div
                     animate={{ rotate: hoveredCard === index ? 360 : 0 }}
                     transition={{ duration: 0.5 }}
                     className="text-white"
                   >
                     {feature.icon}
-                  </motion.div>
+                  </div>
                 </div>
 
                 <h2 className="text-lg lg:text-2xl font-bold text-white mb-4 group-hover:text-red-500 transition-colors duration-300">
@@ -171,7 +180,7 @@ const FoodService = () => {
                   {feature.description}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -179,7 +188,7 @@ const FoodService = () => {
       {/* Testimonials Section */}
       <div className="container mx-auto max-w-4xl mb-12">
         <AnimatePresence mode="wait">
-          <motion.div
+          <div
             key={activeTestimonial}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -196,37 +205,36 @@ const FoodService = () => {
             <p className="text-gray-300 text-sm lg:text-lg mb-6 italic">"{testimonials[activeTestimonial].content}"</p>
             <p className="text-white font-semibold">{testimonials[activeTestimonial].name}</p>
             <p className="text-red-500">{testimonials[activeTestimonial].role}</p>
-          </motion.div>
+          </div>
         </AnimatePresence>
       </div>
 
       {/* CTA Section */}
-      <motion.div
+      <div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
               className="text-center relative"
             >
-              <h3 className="text-xl lg:text-4xl font-bold text-white mb-6">
+              <h3 className="text-xl lg:text-4xl font-bold text-white mb-6" data-aos="fade-left">
               Let the taste adventure begin!
               </h3>
-              <p className="text-gray-300 mb-8 max-w-2xl mx-auto text-sm lg:text-lg">
+              <p className="text-gray-300 mb-8 max-w-2xl mx-auto text-sm lg:text-lg" data-aos="fade-right">
               Subscribe now to get 30% off at food services and enjoy exclusive access to special menu items.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                <button
+                  data-aos="fade-up"
                   className="bg-gradient-to-r from-red-500 to-red-700 text-white font-bold lg:py-4 lg:px-8 px-2 py-2 text-sm lg:text-lg rounded-full transition-all duration-300"
                   onClick={()=> setShowUserForm(true) }
                 >
                   Subscribe Now
-                </motion.button>
+                </button>
               </div>
-            </motion.div>
+            </div>
             <div>
-              {showUserForm && <MembershipFormPage onClose={() => setShowUserForm(false)} />}
+              {showUserForm && <RegistrationForm onClose={() => setShowUserForm(false)} />}
             </div>
     </div>
   );

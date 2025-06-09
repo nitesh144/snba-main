@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import logo from '../assets/images/logo/logo.png';
+import annie_logo from '../assets/images/logo/Annie-consumer.png';
 
 const SplashScreen = () => {
   const [appReady, setAppReady] = useState(false);
@@ -238,8 +238,8 @@ const SplashScreen = () => {
             {/* Logo image */}
             <div className="relative">
               <img
-                src={logo}
-                alt="Aarna Groups Logo"
+                src={annie_logo}
+                alt="Annie-Consumers-Logo"
                 className="w-40 h-40 object-contain drop-shadow-xl"
                 style={{ 
                   filter: 'drop-shadow(0 0 8px rgba(255,0,0,0.4))'
@@ -249,15 +249,15 @@ const SplashScreen = () => {
               {/* Reflection effect */}
               <div className="absolute top-full left-0 right-0 h-20 overflow-hidden">
                 <div 
-                  className="w-40 h-40 mx-auto opacity-30 blur-sm"
+                  className="w-48 h-48 mx-auto opacity-30 blur-sm"
                   style={{ 
                     transform: 'rotateX(180deg) translateY(-40px)',
                     maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0))'
                   }}
                 >
                   <img
-                    src={logo}
-                    alt=""
+                    src={annie_logo}
+                    alt="annie consumers"
                     className="w-full h-full object-contain"
                   />
                 </div>
@@ -288,10 +288,10 @@ const SplashScreen = () => {
         <div 
           className={`mt-8 overflow-hidden transition duration-1000 ease-out ${textRevealed ? 'opacity-100 transform-none' : 'opacity-0 translate-y-4'}`}
         >
-          <h1 className="text-5xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-white to-red-500" style={{
+          <h1 className="text-3xl md:text-5xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-white to-red-500" style={{
             textShadow: '0 0 20px rgba(255, 0, 0, 0.3)'
           }}>
-            AARNA GROUPS
+            ANNIE CONSUMERS
           </h1>
           
           {/* Animated underline */}

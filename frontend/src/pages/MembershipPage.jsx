@@ -11,12 +11,14 @@ const ServicePage = () => {
 
   return (
     <>
-      <Banner />
-      <MembershipDetails />
-      <MartService/>
-      <GymService />
-      <SalonService />
-      <FoodService />
+      <div className='overflow-hidden'>
+        <Banner />
+        <MembershipDetails />
+        <MartService />
+        <GymService />
+        <SalonService />
+        <FoodService />
+      </div>
     </>
   );
 };
