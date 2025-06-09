@@ -17,10 +17,10 @@ useEffect(() => {
   });
 }, []);
     const socialLinks = [
-        { icon: 'facebook', href: 'https://www.facebook.com/profile.php?id=61571678816978' },
+        { icon: 'facebook', href: 'https://www.facebook.com/annieconsumers' },
         { icon: 'whatsapp', href: 'https://wa.me/+917400866821' },
-        { icon: 'youtube', href: 'https://www.youtube.com/@SnbaConsumers' },
-        { icon: 'instagram', href: 'https://www.instagram.com/aarnagroupsofficial/' },
+        { icon: 'youtube', href: 'https://www.youtube.com/@annieconsumers' },
+        { icon: 'instagram', href: 'https://www.instagram.com/annieconsumersraipur/' },
     ];
 
     const services = [
